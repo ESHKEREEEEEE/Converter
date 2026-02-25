@@ -1,0 +1,19 @@
+﻿#include "pch.h"
+#include "CppUnitTest.h"
+#include "../Converter/Converter.cpp"
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace Test
+{
+	TEST_CLASS(CreationTests)
+	{
+	public:
+		
+		TEST_METHOD(LengthConverterClassCreation)
+		{
+			LengthConverter* lc = new LengthConverter();
+			Assert::IsNotNull(lc);
+		}
+	};
+}
