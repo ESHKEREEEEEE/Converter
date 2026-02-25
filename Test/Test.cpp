@@ -31,15 +31,20 @@ namespace Test
 		TEST_METHOD(LengthConverter_Convert1kmToMeters_Returns1000) 
 		{
 			LengthConverter lc;
-			double meters = lc.toMeters("km", 1);
+			double meters = lc.toMeters(LengthType::kilometers, 1);
 			Assert::IsTrue(meters == 1000);
 		}
 		TEST_METHOD(LengthConverter_Convert10kmToMeters_Returns10000)
 		{
 			LengthConverter lc;
-			double meters = lc.toMeters("km", 10);
+			double meters = lc.toMeters(LengthType::kilometers, 10);
 			Assert::IsTrue(meters == 10000);
 		}
-
+		//Old russian
+		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0045) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::vershok, 1);
+			Assert::IsTrue(meters == 0.045);
+		}
 	};
 }
