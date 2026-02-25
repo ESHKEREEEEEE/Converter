@@ -25,4 +25,14 @@ namespace Test
 			Assert::IsNotNull(vc);
 		}
 	};
+
+	TEST_CLASS(ConversionTests) {
+	public:
+		TEST_METHOD(LengthConverter_Convert1kmToMeters_Returns1000) 
+		{
+			LengthConverter lc;
+			double meters = lc.toMeters("km", 1);
+			Assert::IsTrue(meters == 1000);
+		}
+	};
 }
