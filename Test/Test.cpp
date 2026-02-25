@@ -24,12 +24,17 @@ namespace CreationTests
 			VolumeConverter* vc = new VolumeConverter();
 			Assert::IsNotNull(vc);
 		}
+		TEST_METHOD(AreaConverterClassCreation)
+		{
+			AreaConverter* ac = new AreaConverter();
+			Assert::IsNotNull(ac);
+		}
 	};
 }
 
 namespace ConversionTests
 {
-	TEST_CLASS(MeterSystemConversionTests) {
+	TEST_CLASS(MetricSystemConversionTests) {
 	public:
 		TEST_METHOD(LengthConverter_Convert1kmToMeters_Returns1000) 
 		{

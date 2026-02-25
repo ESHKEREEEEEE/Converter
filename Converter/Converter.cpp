@@ -48,6 +48,10 @@ class VolumeConverter {
 
 };
 
+class AreaConverter {
+
+};
+
 int main()
 {
     std::cout << "Hello World!\n";
