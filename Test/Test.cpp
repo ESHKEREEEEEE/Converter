@@ -46,10 +46,35 @@ namespace ConversionTests
 	};
 	TEST_CLASS(OldRussianSystemConversionTests) {
 	public:
-		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0045) {
+		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0d045) {
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::vershok, 1);
 			Assert::IsTrue(meters == 0.045);
+		}
+		TEST_METHOD(LengthConverter_Convert1PyadToMeters_Returns0d18) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::pyad, 1);
+			Assert::IsTrue(meters == 0.18);
+		}
+		TEST_METHOD(LengthConverter_Convert1LokotToMeters_Returns0d48) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::lokot, 1);
+			Assert::IsTrue(meters == 0.48);
+		}
+		TEST_METHOD(LengthConverter_Convert1ArshinToMeters_Returns0d72) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::arshin, 1);
+			Assert::IsTrue(meters == 0.72);
+		}
+		TEST_METHOD(LengthConverter_Convert1SajenToMeters_Returns2d16) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::sajen, 1);
+			Assert::IsTrue(meters == 2.16);
+		}
+		TEST_METHOD(LengthConverter_Convert1VerstaToMeters_Returns2160) {
+			LengthConverter lc;
+			double meters = lc.toMeters(LengthType::versta, 1);
+			Assert::IsTrue(meters == 2160);
 		}
 	};
 }
