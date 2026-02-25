@@ -2,7 +2,11 @@
 #include "CppUnitTest.h"
 #include "../Converter/Converter.cpp"
 
+//Tests for unit converters
+//p in name of tests means point (0p045 == 0.045)
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
 
 namespace CreationTests 
 {
@@ -12,25 +16,25 @@ namespace CreationTests
 		TEST_METHOD(LengthConverterClassCreation)
 		{
 			LengthConverter* lc = new LengthConverter();
-			Assert::IsNotNull(lc);
+			Assert::IsNotNull(lc, L"LengthConverter is not created properly (got nullptr)");
 			delete lc;
 		}
 		TEST_METHOD(MassConverterClassCreation)
 		{
 			MassConverter* mc = new MassConverter();
-			Assert::IsNotNull(mc);
+			Assert::IsNotNull(mc, L"MassConverter is not created properly (got nullptr)");
 			delete mc;
 		}
 		TEST_METHOD(VolumeConverterClassCreation)
 		{
 			VolumeConverter* vc = new VolumeConverter();
-			Assert::IsNotNull(vc);
+			Assert::IsNotNull(vc, L"VolumeConverter is not created properly (got nullptr)");
 			delete vc;
 		}
 		TEST_METHOD(AreaConverterClassCreation)
 		{
 			AreaConverter* ac = new AreaConverter();
-			Assert::IsNotNull(ac);
+			Assert::IsNotNull(ac, L"AreaConverter is not created properly (got nullptr)");
 			delete ac;
 		}
 	};
@@ -43,48 +47,120 @@ namespace ConversionToMetersTests
 		TEST_METHOD(LengthConverter_Convert1KilometerToMeters_Returns1000) 
 		{
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::kilometers, 1);
-			Assert::IsTrue(meters == 1000);
+			double input = 1;
+			double target = 1000;
+			LengthType type = LengthType::kilometers;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				  L"Conversion result of " + std::to_wstring(input) 
+				+ L" of type " + std::to_wstring(type) 
+				+ L" should be equal to " + std::to_wstring(target) 
+				+ L"; got " + std::to_wstring(conversion_result)
+			);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert10KilometersToMeters_Returns10000)
 		{
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::kilometers, 10);
-			Assert::IsTrue(meters == 10000);
-		}		
+			double input = 10;
+			double target = 10000;
+			LengthType type = LengthType::kilometers;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
 	};
 
 	TEST_CLASS(OldRussianSystemConversionTests) {
 	public:
 		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0p045) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::vershok, 1);
-			Assert::IsTrue(meters == 0.045);
+			double input = 1;
+			double target = 0.045;
+			LengthType type = LengthType::vershok;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1PyadToMeters_Returns0p18) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::pyad, 1);
-			Assert::IsTrue(meters == 0.18);
+			double input = 1;
+			double target = 0.18;
+			LengthType type = LengthType::pyad;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1LokotToMeters_Returns0p48) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::lokot, 1);
-			Assert::IsTrue(meters == 0.48);
+			double input = 1;
+			double target = 0.48;
+			LengthType type = LengthType::lokot;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1ArshinToMeters_Returns0p72) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::arshin, 1);
-			Assert::IsTrue(meters == 0.72);
+			double input = 1;
+			double target = 0.72;
+			LengthType type = LengthType::arshin;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1SajenToMeters_Returns2p16) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::sajen, 1);
-			Assert::IsTrue(meters == 2.16);
+			double input = 1;
+			double target = 2.16;
+			LengthType type = LengthType::sajen;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1VerstaToMeters_Returns2160) {
 			LengthConverter lc;
-			double meters = lc.toMeters(LengthType::versta, 1);
-			Assert::IsTrue(meters == 2160);
+			double input = 1;
+			double target = 2160;
+			LengthType type = LengthType::versta;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 	};
 }
@@ -95,13 +171,31 @@ namespace ConversionFromMetersTests
 	public:
 		TEST_METHOD(LengthConverter_Convert1MeterToKilometers_Returns0p001) {
 			LengthConverter lc;
-			double kilometers = lc.fromMeters(LengthType::kilometers, 1);
-			Assert::IsTrue(kilometers == 0.001);
+			double input = 1;
+			double target = 0.001;
+			LengthType type = LengthType::kilometers;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+ L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert10MetersToKilometers_Returns0p01) {
 			LengthConverter lc;
-			double kilometers = lc.fromMeters(LengthType::kilometers, 1);
-			Assert::IsTrue(kilometers == 0.001);
+			double input = 10;
+			double target = 0.01;
+			LengthType type = LengthType::kilometers;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 	};
 
@@ -109,33 +203,87 @@ namespace ConversionFromMetersTests
 	public:
 		TEST_METHOD(LengthConverter_Convert9MetersToVershok_Returns200) {
 			LengthConverter lc;
-			double vershok = lc.fromMeters(LengthType::vershok, 9);
-			Assert::IsTrue(vershok == 200);
+			double input = 9;
+			double target = 200;
+			LengthType type = LengthType::vershok;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert4p5MetersToPyad_Returns25) {
 			LengthConverter lc;
-			double pyad = lc.fromMeters(LengthType::pyad, 4.5);
-			Assert::IsTrue(pyad == 25);
+			double input = 4.5;
+			double target = 25;
+			LengthType type = LengthType::pyad;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert3MetersToLokot_Returns6p25) {
 			LengthConverter lc;
-			double lokot = lc.fromMeters(LengthType::lokot, 3);
-			Assert::IsTrue(lokot == 6.25);
+			double input = 3;
+			double target = 6.25;
+			LengthType type = LengthType::lokot;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert9MetersToArshin_Returns12p5) {
 			LengthConverter lc;
-			double arshin = lc.fromMeters(LengthType::arshin, 9);
-			Assert::IsTrue(arshin == 12.5);
+			double input = 9;
+			double target = 12.5;
+			LengthType type = LengthType::arshin;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert2p16MetersToSajen_Returns1) {
 			LengthConverter lc;
-			double sajen = lc.fromMeters(LengthType::sajen, 2.16);
-			Assert::IsTrue(sajen == 1);
+			double input = 2.16;
+			double target = 1;
+			LengthType type = LengthType::sajen;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert2160MetersToVersta_Returns1) {
 			LengthConverter lc;
-			double versta = lc.fromMeters(LengthType::versta, 2160);
-			Assert::IsTrue(versta == 1);
+			double input = 2160;
+			double target = 1;
+			LengthType type = LengthType::versta;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 	};
 }
