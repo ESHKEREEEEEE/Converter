@@ -6,9 +6,9 @@ class LengthConverter {
 public:
     double toMeters(std::string type, double value) 
     {
-        if (type == "km" && value == 1) return 1000;
+        if (type == "km") return value * 1000;
 
-        throw std::invalid_argument("Works only with 1km");
+        throw std::invalid_argument("Works only with km");
     }
 };
 

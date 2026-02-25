@@ -34,5 +34,12 @@ namespace Test
 			double meters = lc.toMeters("km", 1);
 			Assert::IsTrue(meters == 1000);
 		}
+		TEST_METHOD(LengthConverter_Convert10kmToMeters_Returns10000)
+		{
+			LengthConverter lc;
+			double meters = lc.toMeters("km", 10);
+			Assert::IsTrue(meters == 10000);
+		}
+
 	};
 }
