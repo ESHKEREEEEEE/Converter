@@ -2,8 +2,9 @@
 #include <string>
 #include <stdexcept>
 
+//Types enum for length conversion
 enum LengthType {
-    meters,
+    meters = 1,
     kilometers,
 
     //Old russian
@@ -17,6 +18,10 @@ enum LengthType {
 
 class LengthConverter {
 public:
+    //Converts length from parameter 1 type to meters
+    //Param 1 - type for conversion from LengthType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double toMeters(LengthType type, double value) 
     {
         double multiplier;
@@ -39,6 +44,11 @@ public:
 
         return value * multiplier;
     }
+
+    //Converts length in meters to param 1 type 
+    //Param 1 - type for conversion from LengthType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double fromMeters(LengthType type, double value)
     {
         double multiplier;
@@ -77,5 +87,22 @@ class AreaConverter {
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Welcome to unit conversion program!" << std::endl;
+
+    std::cout << "What unit type do you have? \n 1. Meter \n 2. Kilometer \n 3. Versta \n 4. Sajen \n 5. Arshin \n 6. Lokot \n 7. Pyad \n 8. Vershok" << std::endl;
+    int have;
+    std::cin >> have;
+
+    std::cout << "How many?" << std::endl;
+    double value;
+    std::cin >> value;
+
+    std::cout << "What unit type do you need? \n 1. Meter \n 2. Kilometer \n 3. Versta \n 4. Sajen \n 5. Arshin \n 6. Lokot \n 7. Pyad \n 8. Vershok" << std::endl;
+    int need;
+    std::cin >> need;
+
+    LengthConverter lc;
+    std::cout << "Result " << lc.fromMeters((LengthType)need, lc.toMeters((LengthType)have, value)) << std::endl;
+
+    return 0;
 }
