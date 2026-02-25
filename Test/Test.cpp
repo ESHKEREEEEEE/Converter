@@ -9,11 +9,20 @@ namespace Test
 	TEST_CLASS(CreationTests)
 	{
 	public:
-		
 		TEST_METHOD(LengthConverterClassCreation)
 		{
 			LengthConverter* lc = new LengthConverter();
 			Assert::IsNotNull(lc);
+		}
+		TEST_METHOD(MassConverterClassCreation) 
+		{
+			MassConverter* mc = new MassConverter();
+			Assert::IsNotNull(mc);
+		}
+		TEST_METHOD(VolumeConverterClassCreation)
+		{
+			VolumeConverter* vc = new VolumeConverter();
+			Assert::IsNotNull(vc);
 		}
 	};
 }
