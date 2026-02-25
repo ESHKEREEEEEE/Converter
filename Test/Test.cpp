@@ -101,7 +101,7 @@ namespace ConversionFromMetersTests
 		TEST_METHOD(LengthConverter_Convert10MetersToKilometers_Returns0d01) {
 			LengthConverter lc;
 			double kilometers = lc.fromMeters(LengthType::kilometers, 1);
-			Assert::IsTrue(kilometers == 0.01);
+			Assert::IsTrue(kilometers == 0.001);
 		}
 	};
 
@@ -112,9 +112,9 @@ namespace ConversionFromMetersTests
 			double vershok = lc.fromMeters(LengthType::vershok, 9);
 			Assert::IsTrue(vershok == 200);
 		}
-		TEST_METHOD(LengthConverter_Convert4MetersToPyad_Returns25) {
+		TEST_METHOD(LengthConverter_Convert4d5MetersToPyad_Returns25) {
 			LengthConverter lc;
-			double pyad = lc.fromMeters(LengthType::pyad, 4);
+			double pyad = lc.fromMeters(LengthType::pyad, 4.5);
 			Assert::IsTrue(pyad == 25);
 		}
 		TEST_METHOD(LengthConverter_Convert3MetersToLokot_Returns6d25) {
@@ -124,7 +124,7 @@ namespace ConversionFromMetersTests
 		}
 		TEST_METHOD(LengthConverter_Convert9MetersToArshin_Returns12d5) {
 			LengthConverter lc;
-			double arshin = lc.fromMeters(LengthType::arshin, 3);
+			double arshin = lc.fromMeters(LengthType::arshin, 9);
 			Assert::IsTrue(arshin == 12.5);
 		}
 		TEST_METHOD(LengthConverter_Convert2d16MetersToSajen_Returns1) {

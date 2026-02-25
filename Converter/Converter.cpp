@@ -41,10 +41,25 @@ public:
     }
     double fromMeters(LengthType type, double value)
     {
+        double multiplier;
         switch (type) {
-        case kilometers:    if (value == 1) return 0.001;
-        default: throw std::invalid_argument("Unsupported type or value");
+        //METRIC CONVERSIONS
+        case meters:        multiplier = 1;     break;
+        case kilometers:    multiplier = 0.001;  break;
+
+        //OLD RUSSIAN CONVERSIONS
+        case vershok:       multiplier = 1.0/0.045; break;
+        case pyad:          multiplier = 1.0/0.18;  break;
+        case lokot:         multiplier = 1.0/0.48;  break;
+        case arshin:        multiplier = 1.0/0.72;  break;
+        case sajen:         multiplier = 1.0/2.16;  break;
+        case versta:        multiplier = 1.0/2160;  break;
+
+        //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
         }
+
+        return value * multiplier;
     }
 };
 
