@@ -103,7 +103,10 @@ int main()
     std::cin >> need;
 
     LengthConverter lc;
-    std::cout << "Result " << lc.fromMeters((LengthType)need, lc.toMeters((LengthType)have, value)) << std::endl;
+    try {
+        std::cout << "Result " << lc.fromMeters((LengthType)need, lc.toMeters((LengthType)have, value)) << std::endl;
+    }
+    catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
 
     return 0;
 }
