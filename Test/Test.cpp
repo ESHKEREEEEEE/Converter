@@ -32,23 +32,24 @@ namespace CreationTests
 	};
 }
 
-namespace ConversionTests
+namespace ConversionToMetersTests
 {
 	TEST_CLASS(MetricSystemConversionTests) {
 	public:
-		TEST_METHOD(LengthConverter_Convert1kmToMeters_Returns1000) 
+		TEST_METHOD(LengthConverter_Convert1KilometerToMeters_Returns1000) 
 		{
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::kilometers, 1);
 			Assert::IsTrue(meters == 1000);
 		}
-		TEST_METHOD(LengthConverter_Convert10kmToMeters_Returns10000)
+		TEST_METHOD(LengthConverter_Convert10KilometersToMeters_Returns10000)
 		{
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::kilometers, 10);
 			Assert::IsTrue(meters == 10000);
 		}		
 	};
+
 	TEST_CLASS(OldRussianSystemConversionTests) {
 	public:
 		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0d045) {
@@ -80,6 +81,18 @@ namespace ConversionTests
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::versta, 1);
 			Assert::IsTrue(meters == 2160);
+		}
+	};
+}
+
+namespace ConversionFromMetersTests
+{
+	TEST_CLASS(MetricSystemConversionTests) {
+	public:
+		TEST_METHOD(LengthConverter_Convert1MeterToKilometers_Returns0d001) {
+			LengthConverter lc;
+			double meters = lc.fromMeters(LengthType::kilometers, 1);
+			Assert::IsTrue(meters == 0.001);
 		}
 	};
 }

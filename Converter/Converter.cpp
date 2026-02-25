@@ -5,6 +5,7 @@
 enum LengthType {
     meters,
     kilometers,
+
     //Old russian
     versta,
     sajen,
@@ -37,6 +38,13 @@ public:
         }
 
         return value * multiplier;
+    }
+    double fromMeters(LengthType type, double value)
+    {
+        switch (type) {
+        case kilometers:    if (value == 1) return 0.001;
+        default: throw std::invalid_argument("Unsupported type or value");
+        }
     }
 };
 
