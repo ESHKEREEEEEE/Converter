@@ -13,21 +13,25 @@ namespace CreationTests
 		{
 			LengthConverter* lc = new LengthConverter();
 			Assert::IsNotNull(lc);
+			delete lc;
 		}
 		TEST_METHOD(MassConverterClassCreation)
 		{
 			MassConverter* mc = new MassConverter();
 			Assert::IsNotNull(mc);
+			delete mc;
 		}
 		TEST_METHOD(VolumeConverterClassCreation)
 		{
 			VolumeConverter* vc = new VolumeConverter();
 			Assert::IsNotNull(vc);
+			delete vc;
 		}
 		TEST_METHOD(AreaConverterClassCreation)
 		{
 			AreaConverter* ac = new AreaConverter();
 			Assert::IsNotNull(ac);
+			delete ac;
 		}
 	};
 }
@@ -91,8 +95,47 @@ namespace ConversionFromMetersTests
 	public:
 		TEST_METHOD(LengthConverter_Convert1MeterToKilometers_Returns0d001) {
 			LengthConverter lc;
-			double meters = lc.fromMeters(LengthType::kilometers, 1);
-			Assert::IsTrue(meters == 0.001);
+			double kilometers = lc.fromMeters(LengthType::kilometers, 1);
+			Assert::IsTrue(kilometers == 0.001);
+		}
+		TEST_METHOD(LengthConverter_Convert10MetersToKilometers_Returns0d01) {
+			LengthConverter lc;
+			double kilometers = lc.fromMeters(LengthType::kilometers, 1);
+			Assert::IsTrue(kilometers == 0.01);
+		}
+	};
+
+	TEST_CLASS(OldRussianSystemConversionTests) {
+	public:
+		TEST_METHOD(LengthConverter_Convert9MetersToVershok_Returns200) {
+			LengthConverter lc;
+			double vershok = lc.fromMeters(LengthType::vershok, 9);
+			Assert::IsTrue(vershok == 200);
+		}
+		TEST_METHOD(LengthConverter_Convert4MetersToPyad_Returns25) {
+			LengthConverter lc;
+			double pyad = lc.fromMeters(LengthType::pyad, 4);
+			Assert::IsTrue(pyad == 25);
+		}
+		TEST_METHOD(LengthConverter_Convert3MetersToLokot_Returns6d25) {
+			LengthConverter lc;
+			double lokot = lc.fromMeters(LengthType::lokot, 3);
+			Assert::IsTrue(lokot == 6.25);
+		}
+		TEST_METHOD(LengthConverter_Convert9MetersToArshin_Returns12d5) {
+			LengthConverter lc;
+			double arshin = lc.fromMeters(LengthType::arshin, 3);
+			Assert::IsTrue(arshin == 12.5);
+		}
+		TEST_METHOD(LengthConverter_Convert2d16MetersToSajen_Returns1) {
+			LengthConverter lc;
+			double sajen = lc.fromMeters(LengthType::sajen, 2.16);
+			Assert::IsTrue(sajen == 1);
+		}
+		TEST_METHOD(LengthConverter_Convert2160MetersToVersta_Returns1) {
+			LengthConverter lc;
+			double versta = lc.fromMeters(LengthType::versta, 2160);
+			Assert::IsTrue(versta == 1);
 		}
 	};
 }
