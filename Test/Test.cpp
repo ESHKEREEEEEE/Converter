@@ -4,7 +4,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace Test
+namespace CreationTests 
 {
 	TEST_CLASS(CreationTests)
 	{
@@ -14,7 +14,7 @@ namespace Test
 			LengthConverter* lc = new LengthConverter();
 			Assert::IsNotNull(lc);
 		}
-		TEST_METHOD(MassConverterClassCreation) 
+		TEST_METHOD(MassConverterClassCreation)
 		{
 			MassConverter* mc = new MassConverter();
 			Assert::IsNotNull(mc);
@@ -25,8 +25,11 @@ namespace Test
 			Assert::IsNotNull(vc);
 		}
 	};
+}
 
-	TEST_CLASS(ConversionTests) {
+namespace ConversionTests
+{
+	TEST_CLASS(MeterSystemConversionTests) {
 	public:
 		TEST_METHOD(LengthConverter_Convert1kmToMeters_Returns1000) 
 		{
@@ -39,8 +42,10 @@ namespace Test
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::kilometers, 10);
 			Assert::IsTrue(meters == 10000);
-		}
-		//Old russian
+		}		
+	};
+	TEST_CLASS(OldRussianSystemConversionTests) {
+	public:
 		TEST_METHOD(LengthConverter_Convert1VershokToMeters_Returns0045) {
 			LengthConverter lc;
 			double meters = lc.toMeters(LengthType::vershok, 1);
