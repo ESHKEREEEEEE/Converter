@@ -576,3 +576,36 @@ namespace ConversionFromMetersTests
 		}
 	};
 }
+
+namespace ConversionToKilogramsTests {
+	TEST_CLASS(MetricSystemConversionTests) {
+		TEST_METHOD(MassConverter_Convert1TonToKilograms_Returns1000) {
+			MassConverter mc;
+			double input = 1;
+			double target = 1000;
+			MassType type = MassType::ton;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1TonToGrams_Returns0p001) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.001;
+			MassType type = MassType::gram;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+	};
+}
