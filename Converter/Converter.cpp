@@ -14,7 +14,17 @@ enum LengthType {
     arshin,
     lokot,
     pyad,
-    vershok
+    vershok,
+
+    //USA
+
+    mile,
+    yard,
+    foot,
+    inch,
+    rod,
+    chain,
+    furlong
 };
 
 class LengthConverter {

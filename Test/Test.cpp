@@ -163,6 +163,107 @@ namespace ConversionToMetersTests
 			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 	};
+
+	TEST_CLASS(USASystemConversionTests) {
+		TEST_METHOD(LengthConverter_Convert1MileToMeters_Returns1609p344) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 1609.344;
+			LengthType type = LengthType::mile;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1YardToMeters_Returns0p9144) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 0.9144;
+			LengthType type = LengthType::yard;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1FootToMeters_Returns0p3048) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 0.3048;
+			LengthType type = LengthType::foot;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1InchToMeters_Returns0p0254) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 0.0254;
+			LengthType type = LengthType::inch;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1RodToMeters_Returns5p0292) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 5.0292;
+			LengthType type = LengthType::rod;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1ChainToMeters_Returns20p1168) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 20.1168;
+			LengthType type = LengthType::chain;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1FurlongToMeters_Returns201p168) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 201.168;
+			LengthType type = LengthType::furlong;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+	};
 }
 
 namespace ConversionFromMetersTests
