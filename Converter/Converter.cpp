@@ -31,6 +31,14 @@ enum LengthType {
     furlong
 };
 
+//Types enum for mass conversion
+enum MassType {
+    //Metric system
+    kilogram = 1,
+    gram,
+    ton
+};
+
 class LengthConverter {
 public:
     //Converts length from parameter 1 type to meters
@@ -113,7 +121,21 @@ public:
 };
 
 class MassConverter {
-    
+public:
+    double toKilograms(MassType type, double value) {
+        double multiplier;
+        switch (type) {
+        //METRIC CONVERSIONS
+        case kilogram:      multiplier = 1;      break;
+        case gram:          multiplier = 0.001;  break;
+        case ton:           multiplier = 1000;   break;
+
+        //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    }
 };
 
 class VolumeConverter {
