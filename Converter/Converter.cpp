@@ -4,7 +4,11 @@
 
 //Types enum for length conversion
 enum LengthType {
+    //Metric system
     meters = 1,
+    centimeters,
+    decimeters,
+    millimeters,
     kilometers,
 
     //Old russian
@@ -40,6 +44,9 @@ public:
         //METRIC CONVERSIONS
         case meters:        multiplier = 1;     break;
         case kilometers:    multiplier = 1000;  break;
+        case centimeters:   multiplier = 0.01;  break;
+        case millimeters:   multiplier = 0.001; break;
+        case decimeters:    multiplier = 0.1;   break;
 
         //OLD RUSSIAN CONVERSIONS
         case vershok:       multiplier = 0.045; break;
