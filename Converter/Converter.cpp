@@ -36,7 +36,15 @@ enum MassType {
     //Metric system
     kilogram = 1,
     gram,
-    ton
+    ton,
+
+    //USA
+    ounce,
+    pound,
+    stone,
+    tod,
+    quintal,
+    short_ton
 };
 
 class LengthConverter {
@@ -129,6 +137,14 @@ public:
         case kilogram:      multiplier = 1;      break;
         case gram:          multiplier = 0.001;  break;
         case ton:           multiplier = 1000;   break;
+
+        //USA CONVERSIONS
+        case ounce:         multiplier = 0.0283495;   break;
+        case pound:         multiplier = 0.453592;    break;
+        case stone:         multiplier = 6.3502;      break;
+        case tod:           multiplier = 12.7;        break;
+        case quintal:       multiplier = 45.36;       break;
+        case short_ton:     multiplier = 907.185;     break;
 
         //UNSUPPORTED
         default: throw std::invalid_argument("Unsupported type");
