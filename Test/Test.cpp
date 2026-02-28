@@ -691,5 +691,75 @@ namespace ConversionToKilogramsTests {
 				);
 			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
+		TEST_METHOD(MassConverter_Convert1BerkovecToKilograms_Returns163p8) {
+			MassConverter mc;
+			double input = 1;
+			double target = 163.8;
+			MassType type = MassType::berkovec;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1PudToKilograms_Returns16p380) {
+			MassConverter mc;
+			double input = 1;
+			double target = 16.380;
+			MassType type = MassType::pud;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1RuPoundToKilograms_Returns0p4095124) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.4095124;
+			MassType type = MassType::ru_pound;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1LotToKilograms_Returns0p01279726) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.01279726;
+			MassType type = MassType::lot;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1ZolotnikToKilograms_Returns0p0042657) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.0042657;
+			MassType type = MassType::zolotnik;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
 	};
 }
