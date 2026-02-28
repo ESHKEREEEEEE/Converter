@@ -474,4 +474,105 @@ namespace ConversionFromMetersTests
 			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
 	};
+
+	TEST_CLASS(USASystemConversionTests) {
+		TEST_METHOD(LengthConverter_Convert1609p344MetersToMiles_Returns1) {
+			LengthConverter lc;
+			double input = 1609.344;
+			double target = 1;
+			LengthType type = LengthType::mile;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert0p9144MetersToYards_Returns1) {
+			LengthConverter lc;
+			double input = 0.9144;
+			double target = 1;
+			LengthType type = LengthType::yard;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert0p3048MetersToFoots_Returns1) {
+			LengthConverter lc;
+			double input = 0.3048;
+			double target = 1;
+			LengthType type = LengthType::foot;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert0p0254MetersToInches_Returns1) {
+			LengthConverter lc;
+			double input = 0.0254;
+			double target = 1;
+			LengthType type = LengthType::inch;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert5p0292MetersToRods_Returns1) {
+			LengthConverter lc;
+			double input = 5.0292;
+			double target = 1;
+			LengthType type = LengthType::rod;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert20p1168MetersToChain_Returns1) {
+			LengthConverter lc;
+			double input = 20.1168;
+			double target = 1;
+			LengthType type = LengthType::chain;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert201p168MetersToFurlongs_Returns1) {
+			LengthConverter lc;
+			double input = 201.168;
+			double target = 1;
+			LengthType type = LengthType::furlong;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+	};
 }
