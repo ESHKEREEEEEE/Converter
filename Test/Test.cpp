@@ -343,6 +343,48 @@ namespace ConversionFromMetersTests
 				);
 			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
+		TEST_METHOD(LengthConverter_Convert1MeterToCentimeters_Returns100) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 100;
+			LengthType type = LengthType::centimeters;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1MeterToDecimeters_Returns10) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 10;
+			LengthType type = LengthType::decimeters;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert1MeterToMillimeters_Returns1000) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 1000;
+			LengthType type = LengthType::millimeters;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
 	};
 
 	TEST_CLASS(OldRussianSystemConversionTests) {

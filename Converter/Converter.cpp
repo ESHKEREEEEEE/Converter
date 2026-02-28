@@ -81,8 +81,11 @@ public:
         double multiplier;
         switch (type) {
         //METRIC CONVERSIONS
-        case meters:        multiplier = 1;     break;
+        case meters:        multiplier = 1;      break;
         case kilometers:    multiplier = 0.001;  break;
+        case centimeters:   multiplier = 100;    break;
+        case millimeters:   multiplier = 1000;   break;
+        case decimeters:    multiplier = 10;     break;
 
         //OLD RUSSIAN CONVERSIONS
         case vershok:       multiplier = 1.0/0.045; break;
