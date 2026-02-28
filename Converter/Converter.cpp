@@ -44,7 +44,14 @@ enum MassType {
     stone,
     tod,
     quintal,
-    short_ton
+    short_ton,
+
+    //Old russian
+    berkovec,
+    pud,
+    ru_pound,
+    lot,
+    zolotnik
 };
 
 class LengthConverter {
@@ -145,6 +152,13 @@ public:
         case tod:           multiplier = 12.7;        break;
         case quintal:       multiplier = 45.36;       break;
         case short_ton:     multiplier = 907.185;     break;
+
+        //OLD RUSSIAN CONVERSIONS
+        case berkovec:      multiplier = 163.8;       break;
+        case pud:           multiplier = 16.380;      break;
+        case ru_pound:      multiplier = 0.4095124;   break;
+        case lot:           multiplier = 0.01279726;  break;
+        case zolotnik:      multiplier = 0.0042657;   break;
 
         //UNSUPPORTED
         default: throw std::invalid_argument("Unsupported type");
