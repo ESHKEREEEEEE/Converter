@@ -593,11 +593,95 @@ namespace ConversionToKilogramsTests {
 				);
 			Assert::IsTrue(conversion_result == target, msg.c_str());
 		}
-		TEST_METHOD(MassConverter_Convert1TonToGrams_Returns0p001) {
+		TEST_METHOD(MassConverter_Convert1GramToKilograms_Returns0p001) {
 			MassConverter mc;
 			double input = 1;
 			double target = 0.001;
 			MassType type = MassType::gram;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1OunceToKilograms_Returns0p0283495) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.0283495;
+			MassType type = MassType::ounce;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1PoundToKilograms_Returns0p453592) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.453592;
+			MassType type = MassType::pound;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1StoneToKilograms_Returns6p3502) {
+			MassConverter mc;
+			double input = 1;
+			double target = 6.3502;
+			MassType type = MassType::stone;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1TodToKilograms_Returns12p7) {
+			MassConverter mc;
+			double input = 1;
+			double target = 12.7;
+			MassType type = MassType::tod;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1QuintalToKilograms_Returns45p36) {
+			MassConverter mc;
+			double input = 1;
+			double target = 45.36;
+			MassType type = MassType::quintal;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(conversion_result == target, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1ShortTonToKilograms_Returns907p185) {
+			MassConverter mc;
+			double input = 1;
+			double target = 907.185;
+			MassType type = MassType::short_ton;
 			double conversion_result = mc.toKilograms(type, input);
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
