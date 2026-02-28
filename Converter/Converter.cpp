@@ -49,6 +49,15 @@ public:
         case sajen:         multiplier = 2.16;  break;
         case versta:        multiplier = 2160;  break;
 
+        //USA CONCERSIONS
+        case mile:          multiplier = 1609.344;  break;
+        case yard:          multiplier = 0.9144;    break;
+        case foot:          multiplier = 0.3048;    break;
+        case inch:          multiplier = 0.0254;    break;
+        case rod:           multiplier = 5.0292;    break;
+        case chain:         multiplier = 20.1168;   break;
+        case furlong:       multiplier = 201.168;   break;
+
         //UNSUPPORTED
         default: throw std::invalid_argument("Unsupported type");
         }
