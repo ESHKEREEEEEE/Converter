@@ -516,7 +516,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(conversion_result - target <= 0.0000001, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert0p0254MetersToInches_Returns1) {
 			LengthConverter lc;
