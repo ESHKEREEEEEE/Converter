@@ -54,6 +54,33 @@ enum MassType {
     zolotnik
 };
 
+enum AreaType {
+    //Metric system
+    square_meter = 1,
+    square_kilometer,
+    square_centimeter,
+    square_millimeter,
+    square_decimeter,
+
+    //USA
+
+    square_mile,
+    square_rod,
+    square_yard,
+    square_foot,
+    square_inch,
+    acre,
+
+    //Old russian
+
+    desyatina,
+    kopna,
+    square_sajen,
+    square_arshin,
+    square_vershok,
+    square_versta
+};
+
 class LengthConverter {
 public:
     //Converts length from parameter 1 type to meters
@@ -197,11 +224,12 @@ public:
     }
 };
 
-class VolumeConverter {
-
+class AreaConverter {
+public:
+    double fromSquareMeters(AreaType type, double value) {};
 };
 
-class AreaConverter {
+class VolumeConverter {
 
 };
 

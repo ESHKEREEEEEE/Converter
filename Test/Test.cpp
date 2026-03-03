@@ -960,3 +960,242 @@ namespace ConversionFromKilogramsTests {
 		}
 	};
 }
+
+namespace ConversionFromSquareMetersTests {
+	TEST_CLASS(MetricSystemConversionTests) {
+		TEST_METHOD(AreaConverter_Convert1000000SquareMetersToSquareKilometers_Returns1) {
+			AreaConverter ac;
+			double input = 1000000;
+			double target = 1;
+			AreaType type = AreaType::square_kilometer;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p0001SquareMetersToSquareCentimeters_Returns1) {
+			AreaConverter ac;
+			double input = 0.0001;
+			double target = 1;
+			AreaType type = AreaType::square_centimeter;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p000001SquareMetersToSquareMillimeters_Returns1) {
+			AreaConverter ac;
+			double input = 0.000001;
+			double target = 1;
+			AreaType type = AreaType::square_millimeter;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p01SquareMetersToSquareDecimeters_Returns1) {
+			AreaConverter ac;
+			double input = 0.01;
+			double target = 1;
+			AreaType type = AreaType::square_decimeter;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(USASystemConversionTests) {
+		TEST_METHOD(AreaConverter_Convert2590000SquareMetersToSquareMiles_Returns1) {
+			AreaConverter ac;
+			double input = 2590000;
+			double target = 1;
+			AreaType type = AreaType::square_mile;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert4046p86SquareMetersToAcres_Returns1) {
+			AreaConverter ac;
+			double input = 4046.86;
+			double target = 1;
+			AreaType type = AreaType::acre;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert25p293SquareMetersToSquareRods_Returns1) {
+			AreaConverter ac;
+			double input = 25.293;
+			double target = 1;
+			AreaType type = AreaType::square_rod;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p83613SquareMetersToSquareYards_Returns1) {
+			AreaConverter ac;
+			double input = 0.83613;
+			double target = 1;
+			AreaType type = AreaType::square_yard;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p092903SquareMetersToSquareFoots_Returns1) {
+			AreaConverter ac;
+			double input = 0.092903;
+			double target = 1;
+			AreaType type = AreaType::square_foot;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p00064516SquareMetersToSquareInches_Returns1) {
+			AreaConverter ac;
+			double input = 0.00064516;
+			double target = 1;
+			AreaType type = AreaType::square_inch;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(OldRussianSystemConversionTests) {
+		TEST_METHOD(AreaConverter_Convert10930SquareMetersToDesyatina_Returns1) {
+			AreaConverter ac;
+			double input = 10930;
+			double target = 1;
+			AreaType type = AreaType::desyatina;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert1093SquareMetersToKopna_Returns1) {
+			AreaConverter ac;
+			double input = 1093;
+			double target = 1;
+			AreaType type = AreaType::kopna;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert4p552SquareMetersToSquareSajen_Returns1) {
+			AreaConverter ac;
+			double input = 4.552;
+			double target = 1;
+			AreaType type = AreaType::square_sajen;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p5058SquareMetersToSquareArshin_Returns1) {
+			AreaConverter ac;
+			double input = 0.5058;
+			double target = 1;
+			AreaType type = AreaType::square_arshin;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert0p001976SquareMetersToSquareVershok_Returns1) {
+			AreaConverter ac;
+			double input = 0.001976;
+			double target = 1;
+			AreaType type = AreaType::square_vershok;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(AreaConverter_Convert1138000SquareMetersToSquareVersta_Returns1) {
+			AreaConverter ac;
+			double input = 1138000;
+			double target = 1;
+			AreaType type = AreaType::square_versta;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+}
+
+//TODO: ConversionToSquareMetersTests
+
+//TODO: ConversionFromLitersTests
+
+//TODO: ConversionToSquareMetersTests
