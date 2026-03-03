@@ -166,7 +166,35 @@ public:
 
         return value * multiplier;
     }
-    double fromKilograms(MassType type, double value) { return 0; }
+    double fromKilograms(MassType type, double value) {
+        double multiplier;
+        switch (type) {
+            //METRIC CONVERSIONS
+        case kilogram:      multiplier = 1;      break;
+        case gram:          multiplier = 1000;  break;
+        case ton:           multiplier = 0.001;   break;
+
+            //USA CONVERSIONS
+        case ounce:         multiplier = 1.0/0.0283495;   break;
+        case pound:         multiplier = 1.0/0.453592;    break;
+        case stone:         multiplier = 1.0/6.3502;      break;
+        case tod:           multiplier = 1.0/12.7;        break;
+        case quintal:       multiplier = 1.0/45.36;       break;
+        case short_ton:     multiplier = 1.0/907.185;     break;
+
+            //OLD RUSSIAN CONVERSIONS
+        case berkovec:      multiplier = 1.0/163.8;       break;
+        case pud:           multiplier = 1.0/16.380;      break;
+        case ru_pound:      multiplier = 1.0/0.4095124;   break;
+        case lot:           multiplier = 1.0/0.01279726;  break;
+        case zolotnik:      multiplier = 1.0/0.0042657;   break;
+
+            //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    }
 };
 
 class VolumeConverter {
