@@ -166,6 +166,7 @@ public:
 
         return value * multiplier;
     }
+    double fromKilograms(MassType type, double value) { return 0; }
 };
 
 class VolumeConverter {

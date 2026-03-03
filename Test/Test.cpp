@@ -2,6 +2,8 @@
 #include "CppUnitTest.h"
 #include "../Converter/Converter.cpp"
 
+#define EPS 0.0000001
+
 //Tests for unit converters
 //p in name of tests means point (0p045 == 0.045)
 
@@ -57,7 +59,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target) 
 				+ L"; got " + std::to_wstring(conversion_result)
 			);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue((abs(conversion_result - target) <= EPS), msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert10KilometersToMeters_Returns10000)
 		{
@@ -72,7 +74,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1CentimeterToMeters_Returns0p01)
 		{
@@ -87,7 +89,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1DecimeterToMeters_Returns0p1)
 		{
@@ -102,7 +104,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1MillimeterToMeters_Returns0p001)
 		{
@@ -117,7 +119,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 
@@ -135,7 +137,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1PyadToMeters_Returns0p18) {
 			LengthConverter lc;
@@ -149,7 +151,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1LokotToMeters_Returns0p48) {
 			LengthConverter lc;
@@ -163,7 +165,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1ArshinToMeters_Returns0p72) {
 			LengthConverter lc;
@@ -177,7 +179,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1SajenToMeters_Returns2p16) {
 			LengthConverter lc;
@@ -191,7 +193,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1VerstaToMeters_Returns2160) {
 			LengthConverter lc;
@@ -205,7 +207,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 
@@ -222,7 +224,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1YardToMeters_Returns0p9144) {
 			LengthConverter lc;
@@ -236,7 +238,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1FootToMeters_Returns0p3048) {
 			LengthConverter lc;
@@ -250,7 +252,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1InchToMeters_Returns0p0254) {
 			LengthConverter lc;
@@ -264,7 +266,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1RodToMeters_Returns5p0292) {
 			LengthConverter lc;
@@ -278,7 +280,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1ChainToMeters_Returns20p1168) {
 			LengthConverter lc;
@@ -292,7 +294,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1FurlongToMeters_Returns201p168) {
 			LengthConverter lc;
@@ -306,7 +308,7 @@ namespace ConversionToMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 }
@@ -327,7 +329,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert10MetersToKilometers_Returns0p01) {
 			LengthConverter lc;
@@ -341,7 +343,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1MeterToCentimeters_Returns100) {
 			LengthConverter lc;
@@ -355,7 +357,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1MeterToDecimeters_Returns10) {
 			LengthConverter lc;
@@ -369,7 +371,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert1MeterToMillimeters_Returns1000) {
 			LengthConverter lc;
@@ -383,7 +385,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 
@@ -401,7 +403,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert4p5MetersToPyad_Returns25) {
 			LengthConverter lc;
@@ -415,7 +417,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert3MetersToLokot_Returns6p25) {
 			LengthConverter lc;
@@ -429,7 +431,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert9MetersToArshin_Returns12p5) {
 			LengthConverter lc;
@@ -443,7 +445,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert2p16MetersToSajen_Returns1) {
 			LengthConverter lc;
@@ -457,7 +459,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert2160MetersToVersta_Returns1) {
 			LengthConverter lc;
@@ -471,7 +473,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 
@@ -488,7 +490,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert0p9144MetersToYards_Returns1) {
 			LengthConverter lc;
@@ -502,7 +504,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert0p3048MetersToFoots_Returns1) {
 			LengthConverter lc;
@@ -516,7 +518,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result - target <= 0.0000001, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert0p0254MetersToInches_Returns1) {
 			LengthConverter lc;
@@ -530,7 +532,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert5p0292MetersToRods_Returns1) {
 			LengthConverter lc;
@@ -544,7 +546,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert20p1168MetersToChain_Returns1) {
 			LengthConverter lc;
@@ -558,7 +560,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(LengthConverter_Convert201p168MetersToFurlongs_Returns1) {
 			LengthConverter lc;
@@ -572,7 +574,7 @@ namespace ConversionFromMetersTests
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 }
@@ -591,7 +593,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1GramToKilograms_Returns0p001) {
 			MassConverter mc;
@@ -605,8 +607,10 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+	};
+	TEST_CLASS(USASystemConversionTests) {
 		TEST_METHOD(MassConverter_Convert1OunceToKilograms_Returns0p0283495) {
 			MassConverter mc;
 			double input = 1;
@@ -619,7 +623,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1PoundToKilograms_Returns0p453592) {
 			MassConverter mc;
@@ -633,7 +637,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1StoneToKilograms_Returns6p3502) {
 			MassConverter mc;
@@ -647,7 +651,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1TodToKilograms_Returns12p7) {
 			MassConverter mc;
@@ -661,7 +665,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1QuintalToKilograms_Returns45p36) {
 			MassConverter mc;
@@ -675,7 +679,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1ShortTonToKilograms_Returns907p185) {
 			MassConverter mc;
@@ -689,8 +693,10 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+	};
+	TEST_CLASS(OldRussianSystemConversionTests) {
 		TEST_METHOD(MassConverter_Convert1BerkovecToKilograms_Returns163p8) {
 			MassConverter mc;
 			double input = 1;
@@ -703,7 +709,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1PudToKilograms_Returns16p380) {
 			MassConverter mc;
@@ -717,7 +723,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1RuPoundToKilograms_Returns0p4095124) {
 			MassConverter mc;
@@ -731,7 +737,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1LotToKilograms_Returns0p01279726) {
 			MassConverter mc;
@@ -745,7 +751,7 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 		TEST_METHOD(MassConverter_Convert1ZolotnikToKilograms_Returns0p0042657) {
 			MassConverter mc;
@@ -759,7 +765,198 @@ namespace ConversionToKilogramsTests {
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
-			Assert::IsTrue(conversion_result == target, msg.c_str());
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+}
+
+namespace ConversionFromKilogramsTests {
+	TEST_CLASS(MetricSystemConversionTests) {
+		TEST_METHOD(MassConverter_Convert1KilogramToTons_Returns0p001) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.001;
+			MassType type = MassType::ton;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToGrams_Returns1000) {
+			MassConverter mc;
+			double input = 1;
+			double target = 1000;
+			MassType type = MassType::gram;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(USASystemConversionTests) {
+		TEST_METHOD(MassConverter_Convert1KilogramToOunces_Returns35p2739907) {
+			MassConverter mc;
+			double input = 1;
+			double target = 35.2739907;
+			MassType type = MassType::ounce;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToPounds_Returns2p20462442) {
+			MassConverter mc;
+			double input = 1;
+			double target = 2.20462442;
+			MassType type = MassType::pound;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToStones_Returns0p157475355) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.157475355;
+			MassType type = MassType::stone;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToTods_Returns0p0787401575) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.0787401575;
+			MassType type = MassType::tod;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToQuintal_Returns0p0220458554) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.0220458554;
+			MassType type = MassType::quintal;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert907p185KilogramToShortTons_Returns1) {
+			MassConverter mc;
+			double input = 907.185;
+			double target = 1;
+			MassType type = MassType::short_ton;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(OldRussianSystemConversionTests) {
+		TEST_METHOD(MassConverter_Convert163p8KilogramToBerkovec_Returns1) {
+			MassConverter mc;
+			double input = 163.8;
+			double target = 1;
+			MassType type = MassType::berkovec;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert16p38KilogramToPuds_Returns1) {
+			MassConverter mc;
+			double input = 16.38;
+			double target = 1;
+			MassType type = MassType::pud;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert1KilogramToRuPounds_Returns2p4419285) {
+			MassConverter mc;
+			double input = 1;
+			double target = 2.4419285;
+			MassType type = MassType::ru_pound;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert0p01279726KilogramToLots_Returns1) {
+			MassConverter mc;
+			double input = 0.01279726;
+			double target = 1;
+			MassType type = MassType::lot;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert0p0042657KilogramToZolotniks_Returns1) {
+			MassConverter mc;
+			double input = 0.0042657;
+			double target = 1;
+			MassType type = MassType::zolotnik;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
 }
