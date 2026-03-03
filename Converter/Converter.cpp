@@ -196,12 +196,12 @@ public:
     double fromKilograms(MassType type, double value) {
         double multiplier;
         switch (type) {
-            //METRIC CONVERSIONS
-        case kilogram:      multiplier = 1;      break;
-        case gram:          multiplier = 1000;  break;
+        //METRIC CONVERSIONS
+        case kilogram:      multiplier = 1;       break;
+        case gram:          multiplier = 1000;    break;
         case ton:           multiplier = 0.001;   break;
 
-            //USA CONVERSIONS
+        //USA CONVERSIONS
         case ounce:         multiplier = 1.0/0.0283495;   break;
         case pound:         multiplier = 1.0/0.453592;    break;
         case stone:         multiplier = 1.0/6.3502;      break;
@@ -209,14 +209,14 @@ public:
         case quintal:       multiplier = 1.0/45.36;       break;
         case short_ton:     multiplier = 1.0/907.185;     break;
 
-            //OLD RUSSIAN CONVERSIONS
+        //OLD RUSSIAN CONVERSIONS
         case berkovec:      multiplier = 1.0/163.8;       break;
         case pud:           multiplier = 1.0/16.380;      break;
         case ru_pound:      multiplier = 1.0/0.4095124;   break;
         case lot:           multiplier = 1.0/0.01279726;  break;
         case zolotnik:      multiplier = 1.0/0.0042657;   break;
 
-            //UNSUPPORTED
+        //UNSUPPORTED
         default: throw std::invalid_argument("Unsupported type");
         }
 
@@ -226,7 +226,38 @@ public:
 
 class AreaConverter {
 public:
-    double fromSquareMeters(AreaType type, double value) {};
+    double fromSquareMeters(AreaType type, double value) {
+        double multiplier;
+        switch (type) {
+        //METRIC CONVERSIONS
+        case square_meter:          multiplier = 1.0/1;          break;
+        case square_kilometer:      multiplier = 1.0/1000000;    break;
+        case square_centimeter:     multiplier = 1.0/0.0001;     break;
+        case square_millimeter:     multiplier = 1.0/0.000001;   break;
+        case square_decimeter:      multiplier = 1.0/0.01;       break;
+
+        //USA CONVERSIONS
+        case square_mile:           multiplier = 1.0/2590000;    break;
+        case square_rod:            multiplier = 1.0/25.293;     break;
+        case square_yard:           multiplier = 1.0/0.83613;    break;
+        case square_foot:           multiplier = 1.0/0.092903;   break;
+        case square_inch:           multiplier = 1.0/0.00064516; break;
+        case acre:                  multiplier = 1.0/4046.86;    break;
+
+        //OLD RUSSIAN CONVERSIONS
+        case desyatina:             multiplier = 1.0/10930;      break;
+        case kopna:                 multiplier = 1.0/1093;       break;
+        case square_sajen:          multiplier = 1.0/4.552;      break;
+        case square_arshin:         multiplier = 1.0/0.5058;     break;
+        case square_vershok:        multiplier = 1.0/0.001976;   break;
+        case square_versta:         multiplier = 1.0/1138000;    break;
+
+        //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    };
 };
 
 class VolumeConverter {
