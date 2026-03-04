@@ -1371,7 +1371,7 @@ namespace ConversionToSquareMetersTests {
 		TEST_METHOD(AreaConverter_Convert1SquareSajenToSquareMeters_Returns4p552) {
 			AreaConverter ac;
 			double input = 1;
-			double target = 0.01;
+			double target = 4.552;
 			AreaType type = AreaType::square_sajen;
 			double conversion_result = ac.toSquareMeters(type, input);
 			std::wstring msg = (

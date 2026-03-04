@@ -258,7 +258,38 @@ public:
 
         return value * multiplier;
     };
-    double toSquareMeters(AreaType type, double value) { return 0; };
+    double toSquareMeters(AreaType type, double value) {
+        double multiplier;
+        switch (type) {
+            //METRIC CONVERSIONS
+        case square_meter:          multiplier = 1;          break;
+        case square_kilometer:      multiplier = 1000000;    break;
+        case square_centimeter:     multiplier = 0.0001;     break;
+        case square_millimeter:     multiplier = 0.000001;   break;
+        case square_decimeter:      multiplier = 0.01;       break;
+
+            //USA CONVERSIONS
+        case square_mile:           multiplier = 2590000;    break;
+        case square_rod:            multiplier = 25.293;     break;
+        case square_yard:           multiplier = 0.83613;    break;
+        case square_foot:           multiplier = 0.092903;   break;
+        case square_inch:           multiplier = 0.00064516; break;
+        case acre:                  multiplier = 4046.86;    break;
+
+            //OLD RUSSIAN CONVERSIONS
+        case desyatina:             multiplier = 10930;      break;
+        case kopna:                 multiplier = 1093;       break;
+        case square_sajen:          multiplier = 4.552;      break;
+        case square_arshin:         multiplier = 0.5058;     break;
+        case square_vershok:        multiplier = 0.001976;   break;
+        case square_versta:         multiplier = 1138000;    break;
+
+            //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    };
 };
 
 class VolumeConverter {
