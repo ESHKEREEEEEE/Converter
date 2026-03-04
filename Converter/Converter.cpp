@@ -258,6 +258,7 @@ public:
 
         return value * multiplier;
     };
+    double toSquareMeters(AreaType type, double value) { return 0; };
 };
 
 class VolumeConverter {
