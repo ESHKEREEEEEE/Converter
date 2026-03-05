@@ -1426,3 +1426,348 @@ namespace ConversionToSquareMetersTests {
 		}
 	};
 }
+
+namespace ConversionToLitersTests {
+	TEST_CLASS(MetricSystemConversionTests) {
+		TEST_METHOD(VolumeConverter_Convert1CubicMeterToLiters_Returns1000) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 1000;
+			VolumeType type = VolumeType::cubic_meter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1CubicCentieterToLiters_Returns0p001) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.001;
+			VolumeType type = VolumeType::cubic_centimeter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1CubicMillimeterToLiters_Returns0p000001) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.000001;
+			VolumeType type = VolumeType::cubic_millimeter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1CubicDecimeterToLiters_Returns1) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 1;
+			VolumeType type = VolumeType::cubic_decimeter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(USASystemConversionTests) {
+		TEST_METHOD(VolumeConverter_Convert1FluidOunce1ToLiters_Returns0p02956) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.02956;
+			VolumeType type = VolumeType::fluid_ounce;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1FluidPintToLiters_Returns0p473) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.473;
+			VolumeType type = VolumeType::fluid_pint;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1FluidGallonToLiters_Returns3p785) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 3.785;
+			VolumeType type = VolumeType::fluid_gallon;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1FluidBarrelToLiters_Returns119p2) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 119.2;
+			VolumeType type = VolumeType::fluid_barrel;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1SolidPintToLiters_Returns0p55) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.55;
+			VolumeType type = VolumeType::solid_pint;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1SolidGallonToLiters_Returns4p405) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 4.405;
+			VolumeType type = VolumeType::solid_gallon;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1SolidBarrelToLiters_Returns115p6) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 115.6;
+			VolumeType type = VolumeType::solid_barrel;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+	TEST_CLASS(OldRussianSystemConversionTests) {
+		TEST_METHOD(VolumeConverter_Convert1BochkaToLiters_Returns491p96) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 491.96;
+			VolumeType type = VolumeType::cubic_meter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1KorchagaToLiters_Returns24p59882) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 24.59882;
+			VolumeType type = VolumeType::cubic_meter;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1VedroToLiters_Returns12p29941) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 12.29941;
+			VolumeType type = VolumeType::vedro;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1ChetvertToLiters_Returns3p0748) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 3.0748;
+			VolumeType type = VolumeType::chetvert;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1OsmuhaToLiters_Returns1p5374) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 1.5374;
+			VolumeType type = VolumeType::osmuha;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1VineBottleToLiters_Returns0p7687) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.7687;
+			VolumeType type = VolumeType::vine_bottle;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1VodkaBottleToLiters_Returns0p6) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.6;
+			VolumeType type = VolumeType::vodka_bottle;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1StakanToLiters_Returns0p273) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 0.273;
+			VolumeType type = VolumeType::stakan;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1KadkaToLiters_Returns839p69) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 839.69;
+			VolumeType type = VolumeType::kadka;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1SolidChetvertToLiters_Returns209p9225) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 209.9225;
+			VolumeType type = VolumeType::solid_chetvert;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1OsminaToLiters_Returns104p96125) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 104.96125;
+			VolumeType type = VolumeType::osmina;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1ChetverikToLiters_Returns26p2387) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 26.2387;
+			VolumeType type = VolumeType::chetverik;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(VolumeConverter_Convert1GarnecToLiters_Returns3p2798) {
+			VolumeConverter vc;
+			double input = 1;
+			double target = 3.2798;
+			VolumeType type = VolumeType::garnec;
+			double conversion_result = vc.toLiters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
+}

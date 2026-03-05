@@ -81,6 +81,39 @@ enum AreaType {
     square_versta
 };
 
+enum VolumeType {
+    //Metric system
+    liter = 1,
+    cubic_meter,
+    cubic_centimeter,
+    cubic_millimeter,
+    cubic_decimeter,
+
+    //USA system
+    fluid_ounce,
+    fluid_pint,
+    fluid_gallon,
+    fluid_barrel,
+    solid_pint,
+    solid_gallon,
+    solid_barrel,
+
+    //Old russian system
+    bochka,
+    korchaga,
+    vedro,
+    chetvert,
+    osmuha,
+    vine_bottle,
+    vodka_bottle,
+    stakan,
+    kadka,
+    solid_chetvert,
+    osmina,
+    chetverik,
+    garnec
+};
+
 class LengthConverter {
 public:
     //Converts length from parameter 1 type to meters
@@ -293,7 +326,8 @@ public:
 };
 
 class VolumeConverter {
-
+public:
+    double toLiters(VolumeType type, double value) { return 0; }
 };
 
 int main()
