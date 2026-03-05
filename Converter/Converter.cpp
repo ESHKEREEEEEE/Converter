@@ -327,7 +327,46 @@ public:
 
 class VolumeConverter {
 public:
-    double toLiters(VolumeType type, double value) { return 0; }
+    double toLiters(VolumeType type, double value) {
+        double multiplier;
+        switch (type) {
+            //METRIC CONVERSIONS
+        case liter:              multiplier = 1;      break;
+        case cubic_meter:        multiplier = 1000;      break;
+        case cubic_centimeter:   multiplier = 0.001;      break;
+        case cubic_millimeter:   multiplier = 0.000001;      break;
+        case cubic_decimeter:    multiplier = 1;      break;
+
+            //USA CONVERSIONS
+        case fluid_ounce:        multiplier = 0.02956;      break;
+        case fluid_pint:         multiplier = 0.473;      break;
+        case fluid_gallon:       multiplier = 3.785;      break;
+        case fluid_barrel:       multiplier = 119.2;      break;
+        case solid_pint:         multiplier = 0.55;      break;
+        case solid_gallon:       multiplier = 4.405;      break;
+        case solid_barrel:       multiplier = 115.6;      break;
+
+            //OLD RUSSIAN CONVERSIONS
+        case bochka:             multiplier = 491.96;      break;
+        case korchaga:           multiplier = 24.59882;      break;
+        case vedro:              multiplier = 12.29941;      break;
+        case chetvert:           multiplier = 3.0748;      break;
+        case osmuha:             multiplier = 1.5374;      break;
+        case vine_bottle:        multiplier = 0.7687;      break;
+        case vodka_bottle:       multiplier = 0.6;      break;
+        case stakan:             multiplier = 0.273;      break;
+        case kadka:              multiplier = 839.69;      break;
+        case solid_chetvert:     multiplier = 209.9225;      break;
+        case osmina:             multiplier = 104.96125;      break;
+        case chetverik:          multiplier = 26.2387;      break;
+        case garnec:             multiplier = 3.2798;      break;
+
+            //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    }
 };
 
 int main()

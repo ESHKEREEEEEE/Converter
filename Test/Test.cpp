@@ -1591,7 +1591,7 @@ namespace ConversionToLitersTests {
 			VolumeConverter vc;
 			double input = 1;
 			double target = 491.96;
-			VolumeType type = VolumeType::cubic_meter;
+			VolumeType type = VolumeType::bochka;
 			double conversion_result = vc.toLiters(type, input);
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
@@ -1605,7 +1605,7 @@ namespace ConversionToLitersTests {
 			VolumeConverter vc;
 			double input = 1;
 			double target = 24.59882;
-			VolumeType type = VolumeType::cubic_meter;
+			VolumeType type = VolumeType::korchaga;
 			double conversion_result = vc.toLiters(type, input);
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
