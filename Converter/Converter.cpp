@@ -368,7 +368,46 @@ public:
         return value * multiplier;
     }
 
-    double fromLiters(VolumeType type, double value) { return 0; }
+    double fromLiters(VolumeType type, double value) {
+        double multiplier;
+        switch (type) {
+            //METRIC CONVERSIONS
+        case liter:              multiplier = 1;      break;
+        case cubic_meter:        multiplier = 0.001;      break;
+        case cubic_centimeter:   multiplier = 1000;      break;
+        case cubic_millimeter:   multiplier = 100000;      break;
+        case cubic_decimeter:    multiplier = 1;      break;
+
+            //USA CONVERSIONS
+        case fluid_ounce:        multiplier = 1.0/0.02956;      break;
+        case fluid_pint:         multiplier = 1.0/0.473;      break;
+        case fluid_gallon:       multiplier = 1.0/3.785;      break;
+        case fluid_barrel:       multiplier = 1.0/119.2;      break;
+        case solid_pint:         multiplier = 1.0/0.55;      break;
+        case solid_gallon:       multiplier = 1.0/4.405;      break;
+        case solid_barrel:       multiplier = 1.0/115.6;      break;
+
+            //OLD RUSSIAN CONVERSIONS
+        case bochka:             multiplier = 1.0/491.96;      break;
+        case korchaga:           multiplier = 1.0/24.59882;      break;
+        case vedro:              multiplier = 1.0/12.29941;      break;
+        case chetvert:           multiplier = 1.0/3.0748;      break;
+        case osmuha:             multiplier = 1.0/1.5374;      break;
+        case vine_bottle:        multiplier = 1.0/0.7687;      break;
+        case vodka_bottle:       multiplier = 1.0/0.6;      break;
+        case stakan:             multiplier = 1.0/0.273;      break;
+        case kadka:              multiplier = 1.0/839.69;      break;
+        case solid_chetvert:     multiplier = 1.0/209.9225;      break;
+        case osmina:             multiplier = 1.0/104.96125;      break;
+        case chetverik:          multiplier = 1.0/26.2387;      break;
+        case garnec:             multiplier = 1.0/3.2798;      break;
+
+            //UNSUPPORTED
+        default: throw std::invalid_argument("Unsupported type");
+        }
+
+        return value * multiplier;
+    }
 };
 
 int main()

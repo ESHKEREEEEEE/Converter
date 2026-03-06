@@ -1834,8 +1834,8 @@ namespace ConversionFromLitersTests {
 	TEST_CLASS(OldRussianSystemConversionTests) {
 		TEST_METHOD(VolumeConverter_Convert491p96LitersToBochka_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 491.96;
+			double input = 491.96;
+			double target = 1;
 			VolumeType type = VolumeType::bochka;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1848,8 +1848,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert26p2387LitersToChetverik_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 26.2387;
+			double input = 26.2387;
+			double target = 1;
 			VolumeType type = VolumeType::chetverik;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1862,8 +1862,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert3p0748LitersToChetvert_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 3.0748;
+			double input = 3.0748;
+			double target = 1;
 			VolumeType type = VolumeType::chetvert;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1876,8 +1876,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert3p2798LitersToGarnec_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 3.2798;
+			double input = 3.2798;
+			double target = 1;
 			VolumeType type = VolumeType::garnec;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1890,8 +1890,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert839p69LitersToKadka_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 839.69;
+			double input = 839.69;
+			double target = 1;
 			VolumeType type = VolumeType::kadka;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1904,8 +1904,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert24p59882LitersToKorchaga_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 24.59882;
+			double input = 24.59882;
+			double target = 1;
 			VolumeType type = VolumeType::korchaga;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1918,8 +1918,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert104p96125LitersToOsmina_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 104.96125;
+			double input = 104.96125;
+			double target = 1;
 			VolumeType type = VolumeType::osmina;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1932,8 +1932,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert1p5374LitersToOsmuha_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 1.5374;
+			double input = 1.5374;
+			double target = 1;
 			VolumeType type = VolumeType::osmuha;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1946,8 +1946,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert209p9225LitersToSolidChetvert_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 209.9225;
+			double input = 209.9225;
+			double target = 1;
 			VolumeType type = VolumeType::solid_chetvert;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1960,8 +1960,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p273LitersToStakan_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.273;
+			double input = 0.273;
+			double target = 1;
 			VolumeType type = VolumeType::stakan;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1974,8 +1974,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert12p29941LitersToVedro_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 12.29941;
+			double input = 12.29941;
+			double target = 1;
 			VolumeType type = VolumeType::vedro;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -1988,8 +1988,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p7687LitersToVineBottle_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.7687;
+			double input = 0.7687;
+			double target = 1;
 			VolumeType type = VolumeType::vine_bottle;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2002,8 +2002,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p6LitersVodkaBottleTo_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.6;
+			double input = 0.6;
+			double target = 1;
 			VolumeType type = VolumeType::vodka_bottle;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2018,8 +2018,8 @@ namespace ConversionFromLitersTests {
 	TEST_CLASS(USASystemConversionTests) {
 		TEST_METHOD(VolumeConverter_Convert119p2LitersFluidBarrelTo_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 119.2;
+			double input = 119.2;
+			double target = 1;
 			VolumeType type = VolumeType::fluid_barrel;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2032,8 +2032,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert3p785LitersToFluidGallon_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 3.785;
+			double input = 3.785;
+			double target = 1;
 			VolumeType type = VolumeType::fluid_gallon;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2046,8 +2046,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p02956LitersToFluidOunce_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.02956;
+			double input = 0.02956;
+			double target = 1;
 			VolumeType type = VolumeType::fluid_ounce;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2060,8 +2060,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p473LitersToFluidPint_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.473;
+			double input = 0.473;
+			double target = 1;
 			VolumeType type = VolumeType::fluid_pint;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2074,8 +2074,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert115p6LitersToSolidBarrel_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 115.6;
+			double input = 115.6;
+			double target = 1;
 			VolumeType type = VolumeType::solid_barrel;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2088,8 +2088,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert4p405LitersToSolidGallon_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 4.405;
+			double input = 4.405;
+			double target = 1;
 			VolumeType type = VolumeType::solid_gallon;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
@@ -2102,8 +2102,8 @@ namespace ConversionFromLitersTests {
 		}
 		TEST_METHOD(VolumeConverter_Convert0p55LitersToSolidPint_Returns1) {
 			VolumeConverter vc;
-			double input = 1;
-			double target = 0.55;
+			double input = 0.55;
+			double target = 1;
 			VolumeType type = VolumeType::solid_pint;
 			double conversion_result = vc.fromLiters(type, input);
 			std::wstring msg = (
