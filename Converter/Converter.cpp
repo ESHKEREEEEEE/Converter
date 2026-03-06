@@ -367,6 +367,8 @@ public:
 
         return value * multiplier;
     }
+
+    double fromLiters(VolumeType type, double value) { return 0; }
 };
 
 int main()
