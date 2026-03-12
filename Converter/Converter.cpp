@@ -414,23 +414,277 @@ int main()
 {
     std::cout << "Welcome to unit conversion program!" << std::endl;
 
-    std::cout << "What unit type do you have? \n 1. Meter \n 2. Kilometer \n 3. Versta \n 4. Sajen \n 5. Arshin \n 6. Lokot \n 7. Pyad \n 8. Vershok" << std::endl;
-    int have;
-    std::cin >> have;
+    std::cout << "What unit do you have? \n 1. Length \n 2. Mass \n 3. Volume \n 4. Area" << std::endl;
+    int unit;
+    std::cin >> unit;
 
-    std::cout << "How many?" << std::endl;
-    double value;
-    std::cin >> value;
+    int in_type;
+    double amount;
+    int out_type;
+    switch (unit) {
+    case 1: //Length
+        LengthConverter lc;
+        
+        std::cout << 
+            "What length type do you have?\n"
+            "===Metric===\n"
+            "1. meters\n"
+            "2. centimeters\n"
+            "3. decimeters\n"
+            "4. millimeters\n"
+            "5. kilometers\n\n"
 
-    std::cout << "What unit type do you need? \n 1. Meter \n 2. Kilometer \n 3. Versta \n 4. Sajen \n 5. Arshin \n 6. Lokot \n 7. Pyad \n 8. Vershok" << std::endl;
-    int need;
-    std::cin >> need;
+            "===Old russian==\n"
+            "6. versta\n"
+            "7. sajen\n"
+            "8. arshin\n"
+            "9. lokot\n"
+            "10. pyad\n"
+            "11. vershok\n\n"
 
-    LengthConverter lc;
-    try {
-        std::cout << "Result " << lc.fromMeters((LengthType)need, lc.toMeters((LengthType)have, value)) << std::endl;
+            "===USA===\n"
+            "12. mile\n"
+            "13. yard\n"
+            "14. foot\n"
+            "15. inch\n"
+            "16. rod\n"
+            "17. chain\n"
+            "18. furlong"
+            << std::endl;
+        std::cin >> in_type;
+        std::cout << "How much?" << std::endl;
+        std::cin >> amount;
+        std::cout <<
+            "What length type do you need?\n"
+            "===Metric===\n"
+            "1. meters\n"
+            "2. centimeters\n"
+            "3. decimeters\n"
+            "4. millimeters\n"
+            "5. kilometers\n\n"
+
+            "===Old russian==\n"
+            "6. versta\n"
+            "7. sajen\n"
+            "8. arshin\n"
+            "9. lokot\n"
+            "10. pyad\n"
+            "11. vershok\n\n"
+
+            "===USA===\n"
+            "12. mile\n"
+            "13. yard\n"
+            "14. foot\n"
+            "15. inch\n"
+            "16. rod\n"
+            "17. chain\n"
+            "18. furlong"
+            << std::endl;
+        std::cin >> out_type;
+        try {
+            std::cout << "Result " << lc.fromMeters((LengthType)out_type, lc.toMeters((LengthType)in_type, amount)) << std::endl;
+        }
+        catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
+        break;
+    case 2: //Mass
+        MassConverter mc;
+        std::cout <<
+            "What mass type do you have?\n"
+            "===Metric system===\n"
+            "1. kilogram\n"
+            "2. gram\n"
+            "3. ton\n\n"
+
+            "===USA===\n"
+            "4. ounce\n"
+            "5. pound\n"
+            "6. stone\n"
+            "7. tod\n"
+            "8. quintal\n"
+            "9. short_ton\n\n"
+
+            "===Old russian===\n"
+            "10. berkovec\n"
+            "11. pud\n"
+            "12. ru_pound\n"
+            "13. lot\n"
+            "14. zolotnik"
+            << std::endl;
+        std::cin >> in_type;
+        std::cout << "How much?" << std::endl;
+        std::cin >> amount;
+        std::cout <<
+            "What mass type do you need?\n"
+            "===Metric system===\n"
+            "1. kilogram\n"
+            "2. gram\n"
+            "3. ton\n\n"
+
+            "===USA===\n"
+            "4. ounce\n"
+            "5. pound\n"
+            "6. stone\n"
+            "7. tod\n"
+            "8. quintal\n"
+            "9. short_ton\n\n"
+
+            "===Old russian===\n"
+            "10. berkovec\n"
+            "11. pud\n"
+            "12. ru_pound\n"
+            "13. lot\n"
+            "14. zolotnik"
+            << std::endl;
+        std::cin >> out_type;
+        try {
+            std::cout << "Result " << mc.fromKilograms((MassType)out_type, mc.toKilograms((MassType)in_type, amount)) << std::endl;
+        }
+        catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
+        break;
+    case 3: //Volume
+        VolumeConverter vc;
+        std::cout <<
+            "===Metric system===\n"
+            "1. liter\n"
+            "2. cubic_meter\n"
+            "3. cubic_centimeter\n"
+            "4. cubic_millimeter\n"
+            "5. cubic_decimeter\n\n"
+
+            "===USA system===\n"
+            "6. fluid_ounce\n"
+            "7. fluid_pint\n"
+            "8. fluid_gallon\n"
+            "9. fluid_barrel\n"
+            "10. solid_pint\n"
+            "11. solid_gallon\n"
+            "12. solid_barrel\n\n"
+
+            "===Old russian system===\n"
+            "13. bochka\n"
+            "14. korchaga\n"
+            "15. vedro\n"
+            "16. chetvert\n"
+            "17. osmuha\n"
+            "18. vine_bottle\n"
+            "19. vodka_bottle\n"
+            "20. stakan\n"
+            "21. kadka\n"
+            "22. solid_chetvert\n"
+            "23. osmina\n"
+            "24. chetverik\n"
+            "25. garnec"
+
+            << std::endl;
+        std::cin >> in_type;
+        std::cout << "How much?" << std::endl;
+        std::cin >> amount;
+        std::cout <<
+            "===Metric system===\n"
+            "1. liter\n"
+            "2. cubic_meter\n"
+            "3. cubic_centimeter\n"
+            "4. cubic_millimeter\n"
+            "5. cubic_decimeter\n\n"
+
+            "===USA system===\n"
+            "6. fluid_ounce\n"
+            "7. fluid_pint\n"
+            "8. fluid_gallon\n"
+            "9. fluid_barrel\n"
+            "10. solid_pint\n"
+            "11. solid_gallon\n"
+            "12. solid_barrel\n\n"
+
+            "===Old russian system===\n"
+            "13. bochka\n"
+            "14. korchaga\n"
+            "15. vedro\n"
+            "16. chetvert\n"
+            "17. osmuha\n"
+            "18. vine_bottle\n"
+            "19. vodka_bottle\n"
+            "20. stakan\n"
+            "21. kadka\n"
+            "22. solid_chetvert\n"
+            "23. osmina\n"
+            "24. chetverik\n"
+            "25. garnec"
+            << std::endl;
+        std::cin >> out_type;
+        try {
+            std::cout << "Result " << vc.fromLiters((VolumeType)out_type, vc.toLiters((VolumeType)in_type, amount)) << std::endl;
+        }
+        catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
+        break;
+    case 4: //Area
+        AreaConverter ac;
+        std::cout <<
+            "What area type do you have?\n"
+            "===Metric system===\n"
+            "square_meter\n"
+            "square_kilometer\n"
+            "square_centimeter\n"
+            "square_millimeter\n"
+            "square_decimeter\n\n"
+
+            "===USA===\n"
+
+            "square_mile\n"
+            "square_rod\n"
+            "square_yard\n"
+            "square_foot\n"
+            "square_inch\n"
+            "acre\n\n"
+
+            "===Old russian===\n"
+
+            "desyatina\n"
+            "kopna\n"
+            "square_sajen\n"
+            "square_arshin\n"
+            "square_vershok\n"
+            "square_versta"
+            << std::endl;
+        std::cin >> in_type;
+        std::cout << "How much?" << std::endl;
+        std::cin >> amount;
+        std::cout <<
+            "What area type do you need?\n"
+            "===Metric system===\n"
+            "square_meter\n"
+            "square_kilometer\n"
+            "square_centimeter\n"
+            "square_millimeter\n"
+            "square_decimeter\n\n"
+
+            "===USA===\n"
+
+            "square_mile\n"
+            "square_rod\n"
+            "square_yard\n"
+            "square_foot\n"
+            "square_inch\n"
+            "acre\n\n"
+
+            "===Old russian===\n"
+
+            "desyatina\n"
+            "kopna\n"
+            "square_sajen\n"
+            "square_arshin\n"
+            "square_vershok\n"
+            "square_versta"
+            << std::endl;
+        std::cin >> out_type;
+        try {
+            std::cout << "Result " << ac.fromSquareMeters((AreaType)out_type, ac.toSquareMeters((AreaType)in_type, amount)) << std::endl;
+        }
+        catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
+        break;
+    default:
+        throw std::invalid_argument("Unsupported unit");
     }
-    catch (std::invalid_argument e) { std::cout << e.what() << std::endl; }
 
     return 0;
 }
