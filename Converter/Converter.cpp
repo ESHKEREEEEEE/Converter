@@ -11,15 +11,6 @@ enum LengthType {
     millimeters,
     kilometers,
 
-    //Old russian
-
-    versta,
-    sajen,
-    arshin,
-    lokot,
-    pyad,
-    vershok,
-
     //USA
 
     mile,
@@ -28,7 +19,16 @@ enum LengthType {
     inch,
     rod,
     chain,
-    furlong
+    furlong,
+
+    //Old russian
+
+    versta,
+    sajen,
+    arshin,
+    lokot,
+    pyad,
+    vershok
 };
 
 //Types enum for mass conversion
@@ -54,6 +54,7 @@ enum MassType {
     zolotnik
 };
 
+//Types enum for area conversion
 enum AreaType {
     //Metric system
     square_meter = 1,
@@ -81,6 +82,7 @@ enum AreaType {
     square_versta
 };
 
+//Types enum for volume conversion
 enum VolumeType {
     //Metric system
     liter = 1,
@@ -197,6 +199,10 @@ public:
 
 class MassConverter {
 public:
+    //Converts mass from parameter 1 type to kilograms
+    //Param 1 - type for conversion from MassType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double toKilograms(MassType type, double value) {
         double multiplier;
         switch (type) {
@@ -226,6 +232,10 @@ public:
 
         return value * multiplier;
     }
+    //Converts mass in kilograms to param 1 type 
+    //Param 1 - type for conversion from MassType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double fromKilograms(MassType type, double value) {
         double multiplier;
         switch (type) {
@@ -259,6 +269,10 @@ public:
 
 class AreaConverter {
 public:
+    //Converts area in square meters to param 1 type 
+    //Param 1 - type for conversion from AreaType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double fromSquareMeters(AreaType type, double value) {
         double multiplier;
         switch (type) {
@@ -291,6 +305,10 @@ public:
 
         return value * multiplier;
     };
+    //Converts area from parameter 1 type to square meters
+    //Param 1 - type for conversion from AreaType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double toSquareMeters(AreaType type, double value) {
         double multiplier;
         switch (type) {
@@ -327,6 +345,10 @@ public:
 
 class VolumeConverter {
 public:
+    //Converts volume from parameter 1 type to liters
+    //Param 1 - type for conversion from VolumeType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double toLiters(VolumeType type, double value) {
         double multiplier;
         switch (type) {
@@ -367,7 +389,10 @@ public:
 
         return value * multiplier;
     }
-
+    //Converts volume in liters to param 1 type 
+    //Param 1 - type for conversion from VolumeType enum
+    //Param 2 - double value to convert
+    //Return result of conversion
     double fromLiters(VolumeType type, double value) {
         double multiplier;
         switch (type) {
@@ -428,57 +453,57 @@ int main()
         std::cout << 
             "What length type do you have?\n"
             "===Metric===\n"
-            "1. meters\n"
-            "2. centimeters\n"
-            "3. decimeters\n"
-            "4. millimeters\n"
-            "5. kilometers\n\n"
-
-            "===Old russian==\n"
-            "6. versta\n"
-            "7. sajen\n"
-            "8. arshin\n"
-            "9. lokot\n"
-            "10. pyad\n"
-            "11. vershok\n\n"
+            "1. Meters\n"
+            "2. Centimeters\n"
+            "3. Decimeters\n"
+            "4. Millimeters\n"
+            "5. Kilometers\n\n"
 
             "===USA===\n"
-            "12. mile\n"
-            "13. yard\n"
-            "14. foot\n"
-            "15. inch\n"
-            "16. rod\n"
-            "17. chain\n"
-            "18. furlong"
+            "6. Mile\n"
+            "7. Yard\n"
+            "8. Foot\n"
+            "9. Inch\n"
+            "10. Rod\n"
+            "11. Chain\n"
+            "12. Furlong\n\n"
+
+            "===Old russian==\n"
+            "13. Versta\n"
+            "14. Sajen\n"
+            "15. Arshin\n"
+            "16. Lokot\n"
+            "17. Pyad\n"
+            "18. Vershok"
             << std::endl;
         std::cin >> in_type;
         std::cout << "How much?" << std::endl;
         std::cin >> amount;
         std::cout <<
-            "What length type do you need?\n"
+            "What length type do you have?\n"
             "===Metric===\n"
-            "1. meters\n"
-            "2. centimeters\n"
-            "3. decimeters\n"
-            "4. millimeters\n"
-            "5. kilometers\n\n"
-
-            "===Old russian==\n"
-            "6. versta\n"
-            "7. sajen\n"
-            "8. arshin\n"
-            "9. lokot\n"
-            "10. pyad\n"
-            "11. vershok\n\n"
+            "1. Meters\n"
+            "2. Centimeters\n"
+            "3. Decimeters\n"
+            "4. Millimeters\n"
+            "5. Kilometers\n\n"
 
             "===USA===\n"
-            "12. mile\n"
-            "13. yard\n"
-            "14. foot\n"
-            "15. inch\n"
-            "16. rod\n"
-            "17. chain\n"
-            "18. furlong"
+            "6. Mile\n"
+            "7. Yard\n"
+            "8. Foot\n"
+            "9. Inch\n"
+            "10. Rod\n"
+            "11. Chain\n"
+            "12. Furlong\n\n"
+
+            "===Old russian==\n"
+            "13. Versta\n"
+            "14. Sajen\n"
+            "15. Arshin\n"
+            "16. Lokot\n"
+            "17. Pyad\n"
+            "18. Vershok"
             << std::endl;
         std::cin >> out_type;
         try {
@@ -491,49 +516,49 @@ int main()
         std::cout <<
             "What mass type do you have?\n"
             "===Metric system===\n"
-            "1. kilogram\n"
-            "2. gram\n"
-            "3. ton\n\n"
+            "1. Kilogram\n"
+            "2. Gram\n"
+            "3. Ton\n\n"
 
             "===USA===\n"
-            "4. ounce\n"
-            "5. pound\n"
-            "6. stone\n"
-            "7. tod\n"
-            "8. quintal\n"
-            "9. short_ton\n\n"
+            "4. Ounce\n"
+            "5. Pound\n"
+            "6. Stone\n"
+            "7. Tod\n"
+            "8. Quintal\n"
+            "9. Short ton\n\n"
 
             "===Old russian===\n"
-            "10. berkovec\n"
-            "11. pud\n"
-            "12. ru_pound\n"
-            "13. lot\n"
-            "14. zolotnik"
+            "10. Berkovec\n"
+            "11. Pud\n"
+            "12. Pound [RUSSIAN]\n"
+            "13. Lot\n"
+            "14. Zolotnik"
             << std::endl;
         std::cin >> in_type;
         std::cout << "How much?" << std::endl;
         std::cin >> amount;
         std::cout <<
-            "What mass type do you need?\n"
+            "What mass type do you have?\n"
             "===Metric system===\n"
-            "1. kilogram\n"
-            "2. gram\n"
-            "3. ton\n\n"
+            "1. Kilogram\n"
+            "2. Gram\n"
+            "3. Ton\n\n"
 
             "===USA===\n"
-            "4. ounce\n"
-            "5. pound\n"
-            "6. stone\n"
-            "7. tod\n"
-            "8. quintal\n"
-            "9. short_ton\n\n"
+            "4. Ounce\n"
+            "5. Pound\n"
+            "6. Stone\n"
+            "7. Tod\n"
+            "8. Quintal\n"
+            "9. Short ton\n\n"
 
             "===Old russian===\n"
-            "10. berkovec\n"
-            "11. pud\n"
-            "12. ru_pound\n"
-            "13. lot\n"
-            "14. zolotnik"
+            "10. Berkovec\n"
+            "11. Pud\n"
+            "12. Pound [RUSSIAN]\n"
+            "13. Lot\n"
+            "14. Zolotnik"
             << std::endl;
         std::cin >> out_type;
         try {
@@ -544,72 +569,74 @@ int main()
     case 3: //Volume
         VolumeConverter vc;
         std::cout <<
-            "===Metric system===\n"
-            "1. liter\n"
-            "2. cubic_meter\n"
-            "3. cubic_centimeter\n"
-            "4. cubic_millimeter\n"
-            "5. cubic_decimeter\n\n"
+            "What volume type do you have?\n"
+            "===Metric===\n"
+            "1. Liter\n"
+            "2. Cubic meter\n"
+            "3. Cubic centimeter\n"
+            "4. Cubic millimeter\n"
+            "5. Cubic decimeter\n\n"
 
-            "===USA system===\n"
-            "6. fluid_ounce\n"
-            "7. fluid_pint\n"
-            "8. fluid_gallon\n"
-            "9. fluid_barrel\n"
-            "10. solid_pint\n"
-            "11. solid_gallon\n"
-            "12. solid_barrel\n\n"
+            "===USA===\n"
+            "6. Fluid ounce\n"
+            "7. Fluid pint\n"
+            "8. Fluid gallon\n"
+            "9. Fluid barrel\n"
+            "10. Solid pint\n"
+            "11. Solid gallon\n"
+            "12. Solid barrel\n\n"
 
-            "===Old russian system===\n"
-            "13. bochka\n"
-            "14. korchaga\n"
-            "15. vedro\n"
-            "16. chetvert\n"
-            "17. osmuha\n"
-            "18. vine_bottle\n"
-            "19. vodka_bottle\n"
-            "20. stakan\n"
-            "21. kadka\n"
-            "22. solid_chetvert\n"
-            "23. osmina\n"
-            "24. chetverik\n"
-            "25. garnec"
+            "===Old russian===\n"
+            "13. Bochka\n"
+            "14. Korchaga\n"
+            "15. Vedro\n"
+            "16. Chetvert\n"
+            "17. Osmuha\n"
+            "18. Vine bottle\n"
+            "19. Vodka bottle\n"
+            "20. Stakan\n"
+            "21. Kadka\n"
+            "22. Chetvert [SOLID]\n"
+            "23. Osmina\n"
+            "24. Chetverik\n"
+            "25. Garnec"
 
             << std::endl;
         std::cin >> in_type;
         std::cout << "How much?" << std::endl;
         std::cin >> amount;
         std::cout <<
-            "===Metric system===\n"
-            "1. liter\n"
-            "2. cubic_meter\n"
-            "3. cubic_centimeter\n"
-            "4. cubic_millimeter\n"
-            "5. cubic_decimeter\n\n"
+            "What volume type do you need?\n"
+            "===Metric===\n"
+            "1. Liter\n"
+            "2. Cubic meter\n"
+            "3. Cubic centimeter\n"
+            "4. Cubic millimeter\n"
+            "5. Cubic decimeter\n\n"
 
-            "===USA system===\n"
-            "6. fluid_ounce\n"
-            "7. fluid_pint\n"
-            "8. fluid_gallon\n"
-            "9. fluid_barrel\n"
-            "10. solid_pint\n"
-            "11. solid_gallon\n"
-            "12. solid_barrel\n\n"
+            "===USA===\n"
+            "6. Fluid ounce\n"
+            "7. Fluid pint\n"
+            "8. Fluid gallon\n"
+            "9. Fluid barrel\n"
+            "10. Solid pint\n"
+            "11. Solid gallon\n"
+            "12. Solid barrel\n\n"
 
-            "===Old russian system===\n"
-            "13. bochka\n"
-            "14. korchaga\n"
-            "15. vedro\n"
-            "16. chetvert\n"
-            "17. osmuha\n"
-            "18. vine_bottle\n"
-            "19. vodka_bottle\n"
-            "20. stakan\n"
-            "21. kadka\n"
-            "22. solid_chetvert\n"
-            "23. osmina\n"
-            "24. chetverik\n"
-            "25. garnec"
+            "===Old russian===\n"
+            "13. Bochka\n"
+            "14. Korchaga\n"
+            "15. Vedro\n"
+            "16. Chetvert\n"
+            "17. Osmuha\n"
+            "18. Vine bottle\n"
+            "19. Vodka bottle\n"
+            "20. Stakan\n"
+            "21. Kadka\n"
+            "22. Chetvert [SOLID]\n"
+            "23. Osmina\n"
+            "24. Chetverik\n"
+            "25. Garnec"
             << std::endl;
         std::cin >> out_type;
         try {
@@ -621,60 +648,56 @@ int main()
         AreaConverter ac;
         std::cout <<
             "What area type do you have?\n"
-            "===Metric system===\n"
-            "square_meter\n"
-            "square_kilometer\n"
-            "square_centimeter\n"
-            "square_millimeter\n"
-            "square_decimeter\n\n"
+            "===Metric===\n"
+            "1. Square meter\n"
+            "2. Square kilometer\n"
+            "3. Square centimeter\n"
+            "4. Square millimeter\n"
+            "5. Square decimeter\n\n"
 
             "===USA===\n"
-
-            "square_mile\n"
-            "square_rod\n"
-            "square_yard\n"
-            "square_foot\n"
-            "square_inch\n"
-            "acre\n\n"
+            "6. Square mile\n"
+            "7. Square rod\n"
+            "8. Square yard\n"
+            "9. Square foot\n"
+            "10. Square inch\n"
+            "11. Acre\n\n"
 
             "===Old russian===\n"
-
-            "desyatina\n"
-            "kopna\n"
-            "square_sajen\n"
-            "square_arshin\n"
-            "square_vershok\n"
-            "square_versta"
+            "12. Desyatina\n"
+            "13. Kopna\n"
+            "14. Square sajen\n"
+            "15. Square arshin\n"
+            "16. Square vershok\n"
+            "17. Square versta"
             << std::endl;
         std::cin >> in_type;
         std::cout << "How much?" << std::endl;
         std::cin >> amount;
         std::cout <<
             "What area type do you need?\n"
-            "===Metric system===\n"
-            "square_meter\n"
-            "square_kilometer\n"
-            "square_centimeter\n"
-            "square_millimeter\n"
-            "square_decimeter\n\n"
+            "===Metric===\n"
+            "1. Square meter\n"
+            "2. Square kilometer\n"
+            "3. Square centimeter\n"
+            "4. Square millimeter\n"
+            "5. Square decimeter\n\n"
 
             "===USA===\n"
-
-            "square_mile\n"
-            "square_rod\n"
-            "square_yard\n"
-            "square_foot\n"
-            "square_inch\n"
-            "acre\n\n"
+            "6. Square mile\n"
+            "7. Square rod\n"
+            "8. Square yard\n"
+            "9. Square foot\n"
+            "10. Square inch\n"
+            "11. Acre\n\n"
 
             "===Old russian===\n"
-
-            "desyatina\n"
-            "kopna\n"
-            "square_sajen\n"
-            "square_arshin\n"
-            "square_vershok\n"
-            "square_versta"
+            "12. Desyatina\n"
+            "13. Kopna\n"
+            "14. Square sajen\n"
+            "15. Square arshin\n"
+            "16. Square vershok\n"
+            "17. Square versta"
             << std::endl;
         std::cin >> out_type;
         try {
