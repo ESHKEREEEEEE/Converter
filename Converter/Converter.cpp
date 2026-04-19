@@ -7,7 +7,8 @@ enum LengthType {
 };
 
 enum MassType {
-    ton = 1
+    ton = 1,
+    pud
 };
 
 class LengthConverter {
@@ -32,6 +33,7 @@ public:
 class MassConverter {
 public:
     double toKilograms(MassType type, double value) {
+        if (type == MassType::pud) { return 16.380; }
         return 1000 * value;
     }
 };
