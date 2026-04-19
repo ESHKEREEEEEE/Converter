@@ -40,6 +40,9 @@ public:
         else if (type == MassType::ton) { multiplier = 1000; }
         return multiplier * value;
     }
+    double fromKilograms(MassType type, double value) {
+        return 0.001;
+    }
 };
 
 class AreaConverter {
