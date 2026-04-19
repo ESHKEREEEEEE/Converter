@@ -33,8 +33,10 @@ public:
 class MassConverter {
 public:
     double toKilograms(MassType type, double value) {
-        if (type == MassType::pud) { return 16.380; }
-        return 1000 * value;
+        double multiplier = 0;
+        if (type == MassType::pud) { multiplier = 16.380; }
+        else if (type == MassType::ton) { multiplier = 1000; }
+        return multiplier * value;
     }
 };
 
