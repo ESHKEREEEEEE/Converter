@@ -198,5 +198,19 @@ namespace LengthConversionTests
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(LengthConverter_Convert0p254MetersToInches_Returns10) {
+			LengthConverter lc;
+			double input = 0.254;
+			double target = 10;
+			LengthType type = LengthType::inch;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 }
