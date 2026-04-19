@@ -47,5 +47,20 @@ namespace LengthConversionTests
 				);
 			Assert::IsTrue((abs(conversion_result - target) <= EPS), msg.c_str());
 		}
+		TEST_METHOD(LengthConverter_Convert10KilometersToMeters_Returns10000)
+		{
+			LengthConverter lc;
+			double input = 10;
+			double target = 10000;
+			LengthType type = LengthType::kilometers;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 }
