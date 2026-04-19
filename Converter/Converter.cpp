@@ -13,7 +13,8 @@ enum MassType {
 };
 
 enum AreaType {
-    square_kilometer = 1
+    square_kilometer = 1,
+    square_arshin
 };
 
 class LengthConverter {
@@ -56,6 +57,7 @@ public:
 class AreaConverter {
 public:
     double toSquareMeters(AreaType type, double value) {
+        if (type == AreaType::square_arshin) { return 0.5058; }
         return 1000000 * value;
     }
 };
