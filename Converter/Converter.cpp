@@ -2,14 +2,18 @@
 
 enum LengthType {
     kilometers = 1,
-    arshin
+    arshin,
+    inch
 };
 
 class LengthConverter {
 public:
     double toMeters(LengthType type, int value) {
-        if (type == LengthType::arshin) { return 0.72; }
-        return 1000 * value;
+        double multiplier = 0;
+        if (type == LengthType::arshin) { multiplier = 0.72; }
+        else if (type == LengthType::inch) { multiplier = 0.0254; }
+        else if (type == LengthType::kilometers) { multiplier = 1000; }
+        return multiplier * value;
     }
 };
 
