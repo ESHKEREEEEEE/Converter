@@ -261,6 +261,20 @@ namespace MassConversionTests {
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(MassConverter_Convert10KilogramToTons_Returns0p01) {
+			MassConverter mc;
+			double input = 10;
+			double target = 0.01;
+			MassType type = MassType::ton;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 	TEST_CLASS(OldRussianConversionTests) {
 		TEST_METHOD(MassConverter_Convert1PudToKilograms_Returns16p380) {
