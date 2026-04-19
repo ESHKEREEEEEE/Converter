@@ -64,6 +64,9 @@ public:
         else if (type == AreaType::square_kilometer) { multiplier = 1000000; }
         return multiplier * value;
     }
+    double fromSquareMeters(AreaType type, double value) {
+        return 1;
+    }
 };
 
 int main()
