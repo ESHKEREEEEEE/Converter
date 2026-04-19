@@ -12,6 +12,10 @@ enum MassType {
     ounce
 };
 
+enum AreaType {
+    square_kilometer = 1
+};
+
 class LengthConverter {
 public:
     double toMeters(LengthType type, double value) {
@@ -50,7 +54,10 @@ public:
 };
 
 class AreaConverter {
-
+public:
+    double toSquareMeters(AreaType type, double value) {
+        return 1000000;
+    }
 };
 
 int main()
