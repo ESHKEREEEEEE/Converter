@@ -17,6 +17,7 @@ public:
     }
 
     double fromMeters(LengthType type, int value) {
+        if (type == LengthType::arshin) { return 12.5; }
         return 0.001 * value;
     }
 };
