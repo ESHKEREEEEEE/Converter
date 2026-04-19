@@ -445,5 +445,19 @@ namespace AreaConversionTests {
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(AreaConverter_Convert10SquareArshinToSquareMeters_Returns5p058) {
+			AreaConverter ac;
+			double input = 10;
+			double target = 5.058;
+			AreaType type = AreaType::square_arshin;
+			double conversion_result = ac.toSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 }
