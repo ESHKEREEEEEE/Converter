@@ -43,6 +43,7 @@ public:
     double fromKilograms(MassType type, double value) {
         double multiplier = 0;
         if (type == MassType::pud) { multiplier =  1/16.38; }
+        else if (type == MassType::ounce) { multiplier = 1/ 0.0283495; }
         else if (type == MassType::ton) { multiplier = 0.001; }
         return multiplier * value;
     }
