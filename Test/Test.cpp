@@ -401,6 +401,7 @@ namespace MassConversionTests {
 
 namespace AreaConversionTests {
 	TEST_CLASS(MetricSystemConversion) {
+		//toSquareMeters
 		TEST_METHOD(AreaConverter_Convert1SquareKilometerToSquareMeters_Returns1000000) {
 			AreaConverter ac;
 			double input = 1;
@@ -424,6 +425,21 @@ namespace AreaConversionTests {
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
 				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		//fromSquareMeters
+		TEST_METHOD(AreaConverter_Convert1000000SquareMetersToSquareKilometers_Returns1) {
+			AreaConverter ac;
+			double input = 1000000;
+			double target = 1;
+			AreaType type = AreaType::square_kilometer;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
