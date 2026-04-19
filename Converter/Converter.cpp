@@ -41,7 +41,7 @@ public:
         return multiplier * value;
     }
     double fromKilograms(MassType type, double value) {
-        return 0.001;
+        return 0.001 * value;
     }
 };
 
