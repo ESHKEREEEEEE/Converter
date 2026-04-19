@@ -17,7 +17,7 @@ public:
     }
 
     double fromMeters(LengthType type, int value) {
-        return 0.001;
+        return 0.001 * value;
     }
 };
 
