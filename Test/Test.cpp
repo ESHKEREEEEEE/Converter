@@ -505,6 +505,20 @@ namespace AreaConversionTests {
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(AreaConverter_Convert5p058SquareMetersToSquareArshin_Returns10) {
+			AreaConverter ac;
+			double input = 5.058;
+			double target = 10;
+			AreaType type = AreaType::square_arshin;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 	TEST_CLASS(USAConversionTests) {
 		TEST_METHOD(AreaConverter_Convert1SquareMileToSquareMeters_Returns2590000) {
