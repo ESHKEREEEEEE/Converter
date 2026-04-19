@@ -79,4 +79,20 @@ namespace LengthConversionTests
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
+	TEST_CLASS(USAConversionTests) {
+		TEST_METHOD(LengthConverter_Convert1InchToMeters_Returns0p0254) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 0.0254;
+			LengthType type = LengthType::inch;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
 }
