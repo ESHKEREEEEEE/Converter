@@ -19,5 +19,9 @@ namespace CreationTests
 			MassConverter* mc = new MassConverter();
 			Assert::IsNotNull(mc);
 		}
+		TEST_METHOD(AreaConverterClassCreation) {
+			AreaConverter* ac = new AreaConverter();
+			Assert::IsNotNull(ac);
+		}
 	};
 }
