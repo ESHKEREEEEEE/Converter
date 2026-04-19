@@ -63,4 +63,20 @@ namespace LengthConversionTests
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
+	TEST_CLASS(OldRussianConversionTests) {
+		TEST_METHOD(LengthConverter_Convert1ArshinToMeters_Returns0p72) {
+			LengthConverter lc;
+			double input = 1;
+			double target = 0.72;
+			LengthType type = LengthType::arshin;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
 }
