@@ -276,4 +276,20 @@ namespace MassConversionTests {
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
 	};
+	TEST_CLASS(USAConversionTests) {
+		TEST_METHOD(MassConverter_Convert1OunceToKilograms_Returns0p0283495) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.0283495;
+			MassType type = MassType::ounce;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+	};
 }
