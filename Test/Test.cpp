@@ -109,6 +109,20 @@ namespace LengthConversionTests
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(LengthConverter_Convert10ArshinToMeters_Returns7p2) {
+			LengthConverter lc;
+			double input = 10;
+			double target = 7.2;
+			LengthType type = LengthType::arshin;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 		//fromMeters
 		TEST_METHOD(LengthConverter_Convert9MetersToArshin_Returns12p5) {
 			LengthConverter lc;
@@ -144,6 +158,20 @@ namespace LengthConversionTests
 			LengthConverter lc;
 			double input = 1;
 			double target = 0.0254;
+			LengthType type = LengthType::inch;
+			double conversion_result = lc.toMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(LengthConverter_Convert10InchToMeters_Returns0p254) {
+			LengthConverter lc;
+			double input = 10;
+			double target = 0.254;
 			LengthType type = LengthType::inch;
 			double conversion_result = lc.toMeters(type, input);
 			std::wstring msg = (
