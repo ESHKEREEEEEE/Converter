@@ -4,12 +4,11 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace Test
+namespace CreationTests
 {
 	TEST_CLASS(CreationTests)
 	{
 	public:
-		
 		TEST_METHOD(LengthConverterClassCreation)
 		{
 			LengthConverter* lc = new LengthConverter();
