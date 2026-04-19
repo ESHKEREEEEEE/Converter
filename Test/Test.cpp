@@ -14,5 +14,10 @@ namespace CreationTests
 			LengthConverter* lc = new LengthConverter();
 			Assert::IsNotNull(lc);
 		}
+		TEST_METHOD(MassConverterClassCreation)
+		{
+			MassConverter* mc = new MassConverter();
+			Assert::IsNotNull(mc);
+		}
 	};
 }
