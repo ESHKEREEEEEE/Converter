@@ -7,7 +7,7 @@ enum LengthType {
 class LengthConverter {
 public:
     int toMeters(LengthType type, int value) {
-        return 1000;
+        return 1000 * value;
     }
 };
 
