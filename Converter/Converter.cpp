@@ -56,7 +56,7 @@ public:
 class AreaConverter {
 public:
     double toSquareMeters(AreaType type, double value) {
-        return 1000000;
+        return 1000000 * value;
     }
 };
 
