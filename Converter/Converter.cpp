@@ -65,8 +65,10 @@ public:
         return multiplier * value;
     }
     double fromSquareMeters(AreaType type, double value) {
-        if (type == AreaType::square_arshin) { return 1; }
-        return 0.000001 * value;
+        double multiplier = 0;
+        if (type == AreaType::square_arshin) { multiplier = 1/0.5058; }
+        else if (type == AreaType::square_kilometer) { multiplier = 0.000001; }
+        return multiplier * value;
     }
 };
 
