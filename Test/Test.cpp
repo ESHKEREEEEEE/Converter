@@ -321,6 +321,20 @@ namespace MassConversionTests {
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(MassConverter_Convert163p8KilogramToPuds_Returns10) {
+			MassConverter mc;
+			double input = 163.8;
+			double target = 10;
+			MassType type = MassType::pud;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 	TEST_CLASS(USAConversionTests) {
 		TEST_METHOD(MassConverter_Convert1OunceToKilograms_Returns0p0283495) {
