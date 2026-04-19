@@ -124,6 +124,20 @@ namespace LengthConversionTests
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(LengthConverter_Convert18MetersToArshin_Returns25) {
+			LengthConverter lc;
+			double input = 18;
+			double target = 25;
+			LengthType type = LengthType::arshin;
+			double conversion_result = lc.fromMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" meters" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 	TEST_CLASS(USAConversionTests) {
 		TEST_METHOD(LengthConverter_Convert1InchToMeters_Returns0p0254) {
