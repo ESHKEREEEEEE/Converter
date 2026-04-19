@@ -521,6 +521,7 @@ namespace AreaConversionTests {
 		}
 	};
 	TEST_CLASS(USAConversionTests) {
+		//toSquareMeters
 		TEST_METHOD(AreaConverter_Convert1SquareMileToSquareMeters_Returns2590000) {
 			AreaConverter ac;
 			double input = 1;
@@ -544,6 +545,21 @@ namespace AreaConversionTests {
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
 				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		//fromSquareMeters
+		TEST_METHOD(AreaConverter_Convert2590000SquareMetersToSquareMiles_Returns1) {
+			AreaConverter ac;
+			double input = 2590000;
+			double target = 1;
+			AreaType type = AreaType::square_mile;
+			double conversion_result = ac.fromSquareMeters(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" square meters" +
+				+L" to type " + std::to_wstring(type)
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
