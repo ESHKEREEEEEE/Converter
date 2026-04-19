@@ -231,5 +231,19 @@ namespace MassConversionTests {
 				);
 			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
 		}
+		TEST_METHOD(MassConverter_Convert10TonToKilograms_Returns10000) {
+			MassConverter mc;
+			double input = 10;
+			double target = 10000;
+			MassType type = MassType::ton;
+			double conversion_result = mc.toKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input)
+				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
 	};
 }
