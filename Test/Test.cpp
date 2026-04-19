@@ -217,6 +217,7 @@ namespace LengthConversionTests
 
 namespace MassConversionTests {
 	TEST_CLASS(MetricConversionTests) {
+		//toKilograms
 		TEST_METHOD(MassConverter_Convert1TonToKilograms_Returns1000) {
 			MassConverter mc;
 			double input = 1;
@@ -240,6 +241,21 @@ namespace MassConversionTests {
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
 				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		//fromKilograms
+		TEST_METHOD(MassConverter_Convert1KilogramToTons_Returns0p001) {
+			MassConverter mc;
+			double input = 1;
+			double target = 0.001;
+			MassType type = MassType::ton;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
