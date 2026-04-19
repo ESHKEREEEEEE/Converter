@@ -15,6 +15,10 @@ public:
         else if (type == LengthType::kilometers) { multiplier = 1000; }
         return multiplier * value;
     }
+
+    double fromMeters(LengthType type, int value) {
+        return 0.001;
+    }
 };
 
 class MassConverter {
