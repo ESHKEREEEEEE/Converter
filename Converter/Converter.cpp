@@ -41,8 +41,10 @@ public:
         return multiplier * value;
     }
     double fromKilograms(MassType type, double value) {
-        if (type == MassType::pud) { return 1; }
-        return 0.001 * value;
+        double multiplier = 0;
+        if (type == MassType::pud) { multiplier =  1/16.38; }
+        else if (type == MassType::ton) { multiplier = 0.001; }
+        return multiplier * value;
     }
 };
 
