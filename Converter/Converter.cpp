@@ -6,6 +6,10 @@ enum LengthType {
     inch
 };
 
+enum MassType {
+    ton = 1
+};
+
 class LengthConverter {
 public:
     double toMeters(LengthType type, double value) {
@@ -26,7 +30,10 @@ public:
 };
 
 class MassConverter {
-
+public:
+    double toKilograms(MassType type, double value) {
+        return 1000;
+    }
 };
 
 class AreaConverter {
