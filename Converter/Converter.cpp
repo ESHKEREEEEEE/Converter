@@ -17,8 +17,10 @@ public:
     }
 
     double fromMeters(LengthType type, int value) {
-        if (type == LengthType::arshin) { return 12.5; }
-        return 0.001 * value;
+        double multiplier = 0;
+        if (type == LengthType::arshin) { multiplier =  1/0.72; }
+        else if (type == LengthType::kilometers) { multiplier = 0.001; }
+        return multiplier * value;
     }
 };
 
