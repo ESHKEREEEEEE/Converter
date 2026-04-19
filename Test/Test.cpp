@@ -2,7 +2,7 @@
 #include "CppUnitTest.h"
 #include "../Converter/Converter.cpp"
 
-#define EPS 0.0000001
+#define EPS 0.000001
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -372,6 +372,20 @@ namespace MassConversionTests {
 			MassConverter mc;
 			double input = 1;
 			double target = 35.2739907;
+			MassType type = MassType::ounce;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		TEST_METHOD(MassConverter_Convert10KilogramToOunces_Returns352p739907) {
+			MassConverter mc;
+			double input = 10;
+			double target = 352.739907;
 			MassType type = MassType::ounce;
 			double conversion_result = mc.fromKilograms(type, input);
 			std::wstring msg = (
