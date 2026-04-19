@@ -32,7 +32,7 @@ public:
 class MassConverter {
 public:
     double toKilograms(MassType type, double value) {
-        return 1000;
+        return 1000 * value;
     }
 };
 
