@@ -1,12 +1,14 @@
 ﻿#include <iostream>
 
 enum LengthType {
-    kilometers = 1
+    kilometers = 1,
+    arshin
 };
 
 class LengthConverter {
 public:
-    int toMeters(LengthType type, int value) {
+    double toMeters(LengthType type, int value) {
+        if (type == LengthType::arshin) { return 0.72; }
         return 1000 * value;
     }
 };
