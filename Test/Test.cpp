@@ -337,6 +337,7 @@ namespace MassConversionTests {
 		}
 	};
 	TEST_CLASS(USAConversionTests) {
+		//toKilograms
 		TEST_METHOD(MassConverter_Convert1OunceToKilograms_Returns0p0283495) {
 			MassConverter mc;
 			double input = 1;
@@ -361,6 +362,21 @@ namespace MassConversionTests {
 			std::wstring msg = (
 				L"Conversion result of " + std::to_wstring(input)
 				+ L" of type " + std::to_wstring(type)
+				+ L" should be equal to " + std::to_wstring(target)
+				+ L"; got " + std::to_wstring(conversion_result)
+				);
+			Assert::IsTrue(abs(conversion_result - target) <= EPS, msg.c_str());
+		}
+		//fromKilograms
+		TEST_METHOD(MassConverter_Convert1KilogramToOunces_Returns35p2739907) {
+			MassConverter mc;
+			double input = 1;
+			double target = 35.2739907;
+			MassType type = MassType::ounce;
+			double conversion_result = mc.fromKilograms(type, input);
+			std::wstring msg = (
+				L"Conversion result of " + std::to_wstring(input) + L" kilograms" +
+				+L" to type " + std::to_wstring(type)
 				+ L" should be equal to " + std::to_wstring(target)
 				+ L"; got " + std::to_wstring(conversion_result)
 				);
